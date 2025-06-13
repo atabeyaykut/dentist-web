@@ -1,24 +1,24 @@
-// This file exports placeholder image URLs for our dental clinic website
+// This file exports placeholder image URLs for our dental clinic website using Lorem Picsum
 // In a production environment, these would be replaced with actual images
 
 export const placeholderImages = {
   // Hero section images
-  heroDentist: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1170&auto=format&fit=crop',
-  heroPattern: 'https://www.transparenttextures.com/patterns/cubes.png',
+  heroDentist: 'https://picsum.photos/id/287/1200/800', // Dental related image
+  heroPattern: 'https://www.transparenttextures.com/patterns/cubes.png', // Keeping pattern as is
   
   // About section image
-  aboutDentist: 'https://images.unsplash.com/photo-1606265752439-1f18756aa8fc?q=80&w=1170&auto=format&fit=crop',
+  aboutDentist: 'https://picsum.photos/id/633/1200/800', // Professional looking image
   
   // Services images
-  generalDentistry: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1170&auto=format&fit=crop',
-  cosmeticDentistry: 'https://images.unsplash.com/photo-1581585375260-c62f7aa2e6d2?q=80&w=1170&auto=format&fit=crop',
-  orthodontics: 'https://images.unsplash.com/photo-1601563252642-1f6d3da896b1?q=80&w=1170&auto=format&fit=crop',
-  pediatricDentistry: 'https://images.unsplash.com/photo-1595079599120-8c3d3d9a4588?q=80&w=1170&auto=format&fit=crop',
-  dentalImplants: 'https://images.unsplash.com/photo-1609840112990-4265448268d1?q=80&w=1170&auto=format&fit=crop',
+  generalDentistry: 'https://picsum.photos/id/450/600/400', // Clean, clinical look
+  cosmeticDentistry: 'https://picsum.photos/id/26/600/400', // Bright, aesthetic image
+  orthodontics: 'https://picsum.photos/id/177/600/400', // Structured, precise image
+  pediatricDentistry: 'https://picsum.photos/id/96/600/400', // Colorful, friendly image
+  dentalImplants: 'https://picsum.photos/id/1011/600/400', // Technical, detailed image
   
-  // Testimonial images
-  testimonial1: 'https://randomuser.me/api/portraits/women/45.jpg',
-  testimonial2: 'https://randomuser.me/api/portraits/men/32.jpg',
-  testimonial3: 'https://randomuser.me/api/portraits/women/68.jpg',
-  testimonial4: 'https://randomuser.me/api/portraits/men/75.jpg',
+  // Testimonial images - using specific IDs for consistent faces
+  testimonial1: 'https://picsum.photos/id/1027/150/150', // Professional woman
+  testimonial2: 'https://picsum.photos/id/1012/150/150', // Professional man
+  testimonial3: 'https://picsum.photos/id/1000/150/150', // Family oriented
+  testimonial4: 'https://picsum.photos/id/1074/150/150', // Mature person
 };
