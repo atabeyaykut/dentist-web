@@ -1,10 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  future: {
-    respectDefaultRingColorOpacity: false,
-    disableColorOpacityUtilitiesByDefault: false,
-    relativeContentPathsByDefault: true,
-  },
+module.exports = {
   content: [
     './index.html',
     './src/**/*.{js,jsx}'
