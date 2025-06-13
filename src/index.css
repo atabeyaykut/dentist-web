@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Responsive breakpoints */
+@reference sm, md, lg, xl, 2xl;
+
+/* Common utilities */
+@reference bg, text, font, p, m, px, py, mx, my, mt, mb, ml, mr, flex, grid, items, justify, gap;
+@reference w, h, min-w, min-h, max-w, max-h, rounded, shadow, border, transition, hover, focus;
+@reference space-x, space-y, container, hidden, block, inline-block, relative, absolute, z, overflow;
+@reference fixed, top, left, right, bottom, opacity;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
