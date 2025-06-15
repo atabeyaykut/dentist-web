@@ -86,7 +86,34 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       <AnimatePresence>
-
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-t"
+          >
+            <div className="container py-4 flex flex-col space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={cn(
+                    'py-2 font-medium',
+                    location.pathname === link.path
+                      ? 'text-primary-600'
+                      : 'text-gray-700'
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Button as={Link} to="/contact" className="w-full">
+                Book Appointment
+              </Button>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
     </header>
   );
