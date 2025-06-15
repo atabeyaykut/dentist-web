@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -11,6 +8,11 @@ const navLinks = [
   { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
 ];
+
+// Helper function to combine class names
+const cn = (...classes) => {
+  return classes.filter(Boolean).join(' ');
+};
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,9 +67,9 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button as={Link} to="/contact" className="ml-4">
+          <Link to="/contact" className="btn btn-primary ml-4">
             Book Appointment
-          </Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -77,16 +79,54 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
-            <X className="h-6 w-6" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
           ) : (
-            <Menu className="h-6 w-6" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
           )}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       <AnimatePresence>
-
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
+          >
+            <div className="container py-4 space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={cn(
+                    'block py-2 font-medium transition-colors hover:text-primary-600',
+                    location.pathname === link.path
+                      ? 'text-primary-600'
+                      : 'text-gray-700'
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link 
+                to="/contact" 
+                className="btn btn-primary w-full text-center mt-4"
+              >
+                Book Appointment
+              </Link>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
     </header>
   );
