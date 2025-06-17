@@ -31,7 +31,7 @@ const Header = ({ menuItems = ['Ana Sayfa', 'Hakkımızda', 'Hizmetler', 'Doktor
           className="flex items-center"
         >
           <a href="/" className="flex items-center">
-            <img src="./DtAtabenLogo.svg" alt="DtAtabenLogo" />
+            <img src="/images/DtAtabenLogo.svg" alt="" />
           </a>
         </motion.div>
 

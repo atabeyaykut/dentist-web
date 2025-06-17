@@ -22,7 +22,7 @@ const AboutSection = () => {
           <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
           
           <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 leading-relaxed text-lg">
-            UniQDent olarak, modern diş hekimliği yaklaşımı ile hastalarımıza en kaliteli hizmeti sunmayı amaçlıyoruz. Uzman kadromuz ve son teknoloji ekipmanlarımızla, her yaştan hastamızın ihtiyaçlarına özel çözümler üretiyoruz. Kliniğimizde, estetik diş hekimliğinden, implant uygulamalarına, çocuk diş hekimliğinden, ortodontik tedavilere kadar geniş bir yelpazede hizmet veriyoruz.
+            Dt. Ataben Efe Çelik olarak, modern diş hekimliği yaklaşımı ile hastalarımıza en kaliteli hizmeti sunmayı amaçlıyoruz. Uzman kadromuz ve son teknoloji ekipmanlarımızla, her yaştan hastamızın ihtiyaçlarına özel çözümler üretiyoruz. Kliniğimizde, estetik diş hekimliğinden, implant uygulamalarına, çocuk diş hekimliğinden, ortodontik tedavilere kadar geniş bir yelpazede hizmet veriyoruz.
           </p>
           
           <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">

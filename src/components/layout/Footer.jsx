@@ -55,11 +55,10 @@ const Footer = () => {
           {/* Logo and Description */}
           <div>
             <div className="mb-4">
-              <img 
-                src="https://via.placeholder.com/150x50?text=UniQDent" 
-                alt="UniQDent Logo" 
-                className="h-10"
-              />
+              <span className="text-xl font-bold">
+                <span className="text-cyan-600">Dt. Ataben Efe</span>
+                <span className="text-white"> Çelik</span>
+              </span>
             </div>
             <p className="text-gray-400 mb-6">
               Modern diş hekimliği yaklaşımı ile gülüşünüzü yeniden tasarlıyoruz. 

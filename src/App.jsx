@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       {showSplash ? (
-        <SplashScreen logoSrc="https://via.placeholder.com/150x50?text=UniQDent" duration={2000} />
+        <SplashScreen logoSrc="https://via.placeholder.com/150x50?text=Dt.+Ataben+Efe+Çelik" duration={2000} />
       ) : (
         <LandingPage />
       )}
