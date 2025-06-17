@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Tooth, Smile, HeartPulse, Stethoscope, Scissors } from 'lucide-react';
+import { Sparkles, Smile, Heart, Stethoscope, Scissors } from 'lucide-react';
 
 const ServiceCard = ({ icon: Icon, title, description }) => {
   return (
@@ -46,7 +46,7 @@ const Services = () => {
     {
       id: 2,
       category: 'aesthetic',
-      icon: Tooth,
+      icon: Sparkles,
       title: 'Laminate Veneer',
       description: 'İnce porselen kaplamalar ile dişlerinizin şeklini ve rengini değiştirin.'
     },
@@ -60,14 +60,14 @@ const Services = () => {
     {
       id: 4,
       category: 'general',
-      icon: HeartPulse,
+      icon: Heart,
       title: 'Kanal Tedavisi',
       description: 'Ağrılı dişlerinizi çekim yapmadan kurtarmanın en etkili yolu.'
     },
     {
       id: 5,
       category: 'general',
-      icon: Tooth,
+      icon: Sparkles,
       title: 'Dolgu Tedavisi',
       description: 'Çürük dişlerinizi estetik ve dayanıklı dolgular ile onarıyoruz.'
     },
