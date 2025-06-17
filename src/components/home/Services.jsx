@@ -85,8 +85,8 @@ const Services = () => {
     : services.filter(service => service.category === activeCategory);
 
   return (
-    <section id="hizmetler" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="hizmetler" className="py-24 bg-gray-50">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,12 +94,12 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
             Tüm Hizmetler
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-8"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-10">
-            Modern diş hekimliği teknikleri ile sunduğumuz kapsamlı tedavi seçeneklerimiz
+          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+            Kliniğimizde sunduğumuz kapsamlı diş sağlığı hizmetleri ile gülüşünüzü yeniden tasarlıyoruz.
           </p>
           
           <div className="flex flex-wrap justify-center gap-3 mb-12">

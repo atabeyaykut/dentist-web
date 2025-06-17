@@ -7,8 +7,8 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
   return (
-    <section id="hakkımızda" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="hakkimizda" className="py-24 bg-white">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -16,15 +16,13 @@ const AboutSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
             Hakkımızda
           </h2>
-          
           <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
           
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed mb-8">
-            UniQDent olarak 2010 yılından bu yana, en son teknolojik ekipmanlar ve uzman kadromuzla hastalarımıza kaliteli diş hekimliği hizmeti sunmaktayız. 
-            Kliniğimizde, konfor ve güvenliği ön planda tutarak, her yaştan hastamıza özel çözümler üretiyoruz.
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 leading-relaxed text-lg">
+            UniQDent olarak, modern diş hekimliği yaklaşımı ile hastalarımıza en kaliteli hizmeti sunmayı amaçlıyoruz. Uzman kadromuz ve son teknoloji ekipmanlarımızla, her yaştan hastamızın ihtiyaçlarına özel çözümler üretiyoruz. Kliniğimizde, estetik diş hekimliğinden, implant uygulamalarına, çocuk diş hekimliğinden, ortodontik tedavilere kadar geniş bir yelpazede hizmet veriyoruz.
           </p>
           
           <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">

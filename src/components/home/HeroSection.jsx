@@ -33,7 +33,7 @@ const HeroSection = () => {
               <Button 
                 variant="cyan" 
                 size="xl"
-                className="shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 bg-cyan-600 text-white font-medium rounded-full px-10 py-4"
               >
                 Randevu Al
               </Button>
@@ -50,7 +50,7 @@ const HeroSection = () => {
               <img 
                 src="https://picsum.photos/id/177/600/500" 
                 alt="Modern Diş Kliniği Ekipmanı" 
-                className="rounded-xl shadow-2xl w-full h-auto"
+                className="rounded-3xl shadow-2xl w-full h-auto"
                 loading="lazy"
               />
             </motion.div>

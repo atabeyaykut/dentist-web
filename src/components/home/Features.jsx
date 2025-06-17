@@ -44,8 +44,8 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gray-50">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,10 +53,10 @@ const Features = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
             Neden Bizi Tercih Etmelisiniz?
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto"></div>
+          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

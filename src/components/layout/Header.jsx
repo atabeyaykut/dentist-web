@@ -20,37 +20,33 @@ const Header = ({ menuItems = ['Ana Sayfa', 'Hakkımızda', 'Hizmetler', 'Doktor
   return (
     <header className={cn(
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-      scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+      scrolled ? 'bg-white shadow-md py-2' : 'bg-white py-4'
     )}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="flex items-center"
         >
           <a href="/" className="flex items-center">
-            <img 
-              src="https://via.placeholder.com/150x50?text=UniQDent" 
-              alt="UniQDent Logo" 
-              className="h-10 md:h-12"
-            />
+            <img src="./DtAtabenLogo.svg" alt="DtAtabenLogo" />
           </a>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           {menuItems.map((item, index) => (
-            <a 
-              key={index} 
+            <a
+              key={index}
               href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-              className="text-gray-700 hover:text-cyan-600 font-medium transition-colors"
+              className="text-gray-700 hover:text-cyan-600 font-medium transition-colors text-sm"
             >
               {item}
             </a>
           ))}
-          <Button variant="cyan" size="default">
+          <Button variant="cyan" size="sm" className="ml-4 bg-cyan-600 text-white rounded-full px-6 py-2 text-sm">
             Randevu Al
           </Button>
         </nav>

@@ -28,8 +28,8 @@ const BlogSection = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="blog" className="py-24 bg-white">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,12 +37,12 @@ const BlogSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
             Blog & Haberler
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-8"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Ağız ve diş sağlığı hakkında bilgilendirici yazılar ve kliniğimizden en güncel haberler
+          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+            Diş sağlığı hakkında bilmeniz gereken her şey ve kliniğimizden en son haberler.
           </p>
         </motion.div>
 

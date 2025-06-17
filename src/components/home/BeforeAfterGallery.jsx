@@ -73,8 +73,8 @@ const BeforeAfterGallery = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="galeri" className="py-24 bg-white">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,12 +82,12 @@ const BeforeAfterGallery = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
             Öncesi ve Sonrası
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-8"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Hastalarımızın tedavi öncesi ve sonrası görüntüleri ile başarılı sonuçlarımızı görebilirsiniz.
+          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+            Hastalarımızın tedavi öncesi ve sonrası gülüşlerindeki değişimi görün.
           </p>
         </motion.div>
 

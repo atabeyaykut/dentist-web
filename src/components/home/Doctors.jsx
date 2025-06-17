@@ -24,8 +24,8 @@ const Doctors = () => {
   ];
 
   return (
-    <section id="doktorlar" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="doktorlar" className="py-24 bg-white">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,13 +33,12 @@ const Doctors = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
             Uzman Kadromuz
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-8"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Alanında uzman ve deneyimli hekimlerimiz, en güncel tedavi yöntemlerini uygulayarak 
-            sizlere en kaliteli hizmeti sunmak için çalışmaktadır.
+          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+            Alanında uzman ve deneyimli doktorlarımızla size en iyi hizmeti sunuyoruz.
           </p>
         </motion.div>
 
