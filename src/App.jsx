@@ -1,24 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Layout from './components/layout/Layout'
-import HomePage from './pages/HomePage'
-import ServicesPage from './pages/ServicesPage'
-import AboutPage from './pages/AboutPage'
-import ContactPage from './pages/ContactPage'
-import NotFoundPage from './pages/NotFoundPage'
+import { useState, useEffect } from 'react'
+import SplashScreen from './components/SplashScreen'
+import LandingPage from './components/home/LandingPage'
+
+
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="services" element={<ServicesPage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </Router>
+    <>
+      {showSplash ? (
+        <SplashScreen logoSrc="https://via.placeholder.com/150x50?text=UniQDent" duration={2000} />
+      ) : (
+        <LandingPage />
+      )}
+    </>  
   )
 }
 

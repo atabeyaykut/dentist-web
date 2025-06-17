@@ -1,80 +1,127 @@
-import { Link } from 'react-router-dom'
+import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
   
+  const footerLinks = [
+    {
+      title: "Hızlı Erişim",
+      links: [
+        { name: "Ana Sayfa", href: "#" },
+        { name: "Hakkımızda", href: "#hakkımızda" },
+        { name: "Hizmetler", href: "#hizmetler" },
+        { name: "Doktorlar", href: "#doktorlar" },
+        { name: "Blog", href: "#blog" },
+        { name: "İletişim", href: "#iletişim" }
+      ]
+    },
+    {
+      title: "Hizmetlerimiz",
+      links: [
+        { name: "İmplant", href: "#" },
+        { name: "Ortodonti", href: "#" },
+        { name: "Diş Beyazlatma", href: "#" },
+        { name: "Estetik Dolgu", href: "#" },
+        { name: "Çocuk Diş Hekimliği", href: "#" },
+        { name: "Diş Eti Tedavisi", href: "#" }
+      ]
+    },
+    {
+      title: "İletişim",
+      links: [
+        { 
+          name: "Bağdat Caddesi No:123, Kadıköy, İstanbul", 
+          href: "#",
+          icon: <MapPin size={16} className="mr-2" />
+        },
+        { 
+          name: "+90 (212) 123 45 67", 
+          href: "tel:+902121234567",
+          icon: <Phone size={16} className="mr-2" />
+        },
+        { 
+          name: "info@uniqdent.com", 
+          href: "mailto:info@uniqdent.com",
+          icon: <Mail size={16} className="mr-2" />
+        }
+      ]
+    }
+  ];
+
   return (
-    <footer className="bg-secondary-900 text-white py-12">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Logo and Description */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Dentist Web</h3>
-            <p className="text-secondary-300 mb-4">
-              Providing quality dental care for your entire family.
+            <div className="mb-4">
+              <img 
+                src="https://via.placeholder.com/150x50?text=UniQDent" 
+                alt="UniQDent Logo" 
+                className="h-10"
+              />
+            </div>
+            <p className="text-gray-400 mb-6">
+              Modern diş hekimliği yaklaşımı ile gülüşünüzü yeniden tasarlıyoruz. 
+              Uzman kadromuz ve son teknoloji ekipmanlarımızla yanınızdayız.
             </p>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Facebook" className="text-white hover:text-primary-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
+              <a href="#" className="bg-gray-800 hover:bg-cyan-600 transition-colors p-2 rounded-full">
+                <Facebook size={18} />
               </a>
-              <a href="#" aria-label="Instagram" className="text-white hover:text-primary-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
+              <a href="#" className="bg-gray-800 hover:bg-cyan-600 transition-colors p-2 rounded-full">
+                <Instagram size={18} />
               </a>
-              <a href="#" aria-label="Twitter" className="text-white hover:text-primary-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter">
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                </svg>
+              <a href="#" className="bg-gray-800 hover:bg-cyan-600 transition-colors p-2 rounded-full">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="bg-gray-800 hover:bg-cyan-600 transition-colors p-2 rounded-full">
+                <Linkedin size={18} />
               </a>
             </div>
           </div>
           
-          <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-secondary-300 hover:text-primary-400">Home</Link></li>
-              <li><Link to="/services" className="text-secondary-300 hover:text-primary-400">Services</Link></li>
-              <li><Link to="/contact" className="text-secondary-300 hover:text-primary-400">Contact</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-            <address className="not-italic text-secondary-300">
-              <p className="flex items-center mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                123 Dental Street, City
-              </p>
-              <p className="flex items-center mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                (123) 456-7890
-              </p>
-              <p className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>
-                info@dentistweb.com
-              </p>
-            </address>
-          </div>
+          {/* Footer Links */}
+          {footerLinks.map((column, index) => (
+            <div key={index}>
+              <h3 className="text-lg font-semibold mb-4">{column.title}</h3>
+              <ul className="space-y-2">
+                {column.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <a 
+                      href={link.href} 
+                      className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center"
+                    >
+                      {link.icon && link.icon}
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         
-        <div className="border-t border-secondary-800 mt-8 pt-8 text-center text-secondary-400">
-          <p>&copy; {currentYear} Dentist Web. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            &copy; {currentYear} UniQDent. Tüm hakları saklıdır.
+          </p>
+          <div className="flex space-x-6">
+            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Gizlilik Politikası
+            </a>
+            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Kullanım Şartları
+            </a>
+            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              KVKK
+            </a>
+          </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
