@@ -1,0 +1,137 @@
+.before-after-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  user-select: none;
+}
+
+.before-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  border-right: 2px solid #fff;
+}
+
+.after-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.before-image,
+.after-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  margin-left: -20px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ew-resize;
+}
+
+.slider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.slider-arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #0284c7;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.left-arrow {
+  left: -15px;
+}
+
+.right-arrow {
+  right: -15px;
+}
+
+.image-label {
+  position: absolute;
+  padding: 5px 10px;
+  background-color: rgba(2, 132, 199, 0.8);
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 4;
+}
+
+.before-label {
+  top: 15px;
+  left: 15px;
+}
+
+.after-label {
+  top: 15px;
+  right: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .before-after-container {
+    height: 300px;
+  }
+  
+  .slider-arrow {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+  
+  .left-arrow {
+    left: -12px;
+  }
+  
+  .right-arrow {
+    right: -12px;
+  }
+  
+  .image-label {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .before-after-container {
+    height: 250px;
+  }
+}

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import BlogCard from './BlogCard';
 import { Button } from '@/components/ui/button';
+import './BlogSection.css';
 
 const BlogSection = () => {
   const blogPosts = [
@@ -28,25 +29,25 @@ const BlogSection = () => {
   ];
 
   return (
-    <section id="blog" className="py-24 bg-white">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="blog" className="blog-section">
+      <div className="blog-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="blog-header"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="blog-title">
             Blog & Haberler
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+          <div className="blog-divider"></div>
+          <p className="blog-description">
             Diş sağlığı hakkında bilmeniz gereken her şey ve kliniğimizden en son haberler.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="blog-grid">
           {blogPosts.map((post, index) => (
             <BlogCard
               key={index}
@@ -59,8 +60,8 @@ const BlogSection = () => {
           ))}
         </div>
 
-        <div className="text-center">
-          <Button variant="outline" size="lg" className="border-cyan-600 text-cyan-600 hover:bg-cyan-50">
+        <div className="blog-button-container">
+          <Button variant="outline" size="lg" className="blog-view-all-button">
             Tüm Yazıları Gör
           </Button>
         </div>

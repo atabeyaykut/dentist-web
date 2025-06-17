@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import './Testimonials.css';
 
 const TestimonialCard = ({ name, rating, comment, date }) => {
   return (
@@ -8,29 +9,29 @@ const TestimonialCard = ({ name, rating, comment, date }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+      className="testimonial-card"
     >
-      <div className="flex items-center mb-4">
-        <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3">
-          <span className="text-gray-500 font-medium">{name.charAt(0)}</span>
+      <div className="testimonial-header">
+        <div className="testimonial-avatar">
+          <span className="testimonial-initial">{name.charAt(0)}</span>
         </div>
-        <div>
-          <h4 className="font-semibold text-gray-800">{name}</h4>
-          <p className="text-gray-500 text-xs">{date}</p>
+        <div className="testimonial-user-info">
+          <h4 className="testimonial-user-name">{name}</h4>
+          <p className="testimonial-date">{date}</p>
         </div>
       </div>
       
-      <div className="flex mb-3">
+      <div className="testimonial-rating">
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
             size={16}
-            className={i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}
+            className={i < rating ? "star-filled" : "star-empty"}
           />
         ))}
       </div>
       
-      <p className="text-gray-600 text-sm">{comment}</p>
+      <p className="testimonial-comment">{comment}</p>
     </motion.div>
   );
 };
@@ -58,7 +59,7 @@ const Testimonials = () => {
     {
       name: "Zehra Şahin",
       rating: 5,
-      comment: "Çocuğum için gittiğimiz ilk diş hekimi deneyimi harikaydı. Çok sabırlı ve ilgili davrandılar.",
+      comment: "Çocuğum için gittiğimiz ilk diş hekimi deneyimi harikaydi. Çok sabırlı ve ilgili davrandılar.",
       date: "1 hafta önce"
     }
   ];
@@ -79,25 +80,25 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="yorumlar" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="yorumlar" className="testimonials-section">
+      <div className="testimonials-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="testimonials-header"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="testimonials-title">
             Müşteri Yorumları
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+          <div className="testimonials-divider"></div>
+          <p className="testimonials-description">
             Hastalarımızın bizimle ilgili düşünceleri ve deneyimleri.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="testimonials-grid">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}
@@ -109,20 +110,21 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="text-center">
-          <p className="text-gray-600 mb-8">Bizi sosyal medyada takip edin ve değerlendirin</p>
-          <div className="flex justify-center items-center space-x-8">
+        <div className="social-media-section">
+          <p className="social-media-text">Bizi sosyal medyada takip edin ve değerlendirin</p>
+          <div className="social-media-logos">
             {socialLogos.map((logo, index) => (
               <motion.a
                 key={index}
                 href="#"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="social-media-link"
               >
                 <img 
                   src={logo.src} 
                   alt={logo.name} 
-                  className="h-10 md:h-12"
+                  className="social-media-logo"
                 />
               </motion.a>
             ))}

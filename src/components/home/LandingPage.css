@@ -1,0 +1,11 @@
+/* Landing Page Styles */
+.landing-page {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-page-main {
+  flex: 1;
+}

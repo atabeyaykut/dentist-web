@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Smile, Heart, Stethoscope, Scissors } from 'lucide-react';
+import './Services.css';
 
 const ServiceCard = ({ icon: Icon, title, description }) => {
   return (
@@ -9,15 +10,15 @@ const ServiceCard = ({ icon: Icon, title, description }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+      className="service-card"
     >
-      <div className="flex items-start">
-        <div className="bg-cyan-100 p-3 rounded-lg mr-4">
-          <Icon size={24} className="text-cyan-700" />
+      <div className="service-card-content">
+        <div className="service-icon-container">
+          <Icon size={24} className="service-icon" />
         </div>
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
-          <p className="text-gray-600 text-sm">{description}</p>
+        <div className="service-text-container">
+          <h3 className="service-title">{title}</h3>
+          <p className="service-description">{description}</p>
         </div>
       </div>
     </motion.div>
@@ -85,33 +86,29 @@ const Services = () => {
     : services.filter(service => service.category === activeCategory);
 
   return (
-    <section id="hizmetler" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="hizmetler" className="services-section">
+      <div className="services-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="services-header"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="services-title">
             Tüm Hizmetler
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+          <div className="services-divider"></div>
+          <p className="services-description">
             Kliniğimizde sunduğumuz kapsamlı diş sağlığı hizmetleri ile gülüşünüzü yeniden tasarlıyoruz.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="services-categories">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? 'bg-cyan-600 text-white'
-                    : 'bg-cyan-100 text-cyan-800 hover:bg-cyan-200'
-                }`}
+                className={`service-category-button ${activeCategory === category.id ? 'active' : ''}`}
               >
                 {category.name}
               </button>
@@ -119,7 +116,7 @@ const Services = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="services-grid">
           {filteredServices.map((service) => (
             <ServiceCard
               key={service.id}

@@ -5,11 +5,12 @@ import AboutSection from './AboutSection';
 import Features from './Features';
 import Doctors from './Doctors';
 import Services from './Services';
-import BeforeAfterGallery from './BeforeAfterGallery';
+import BeforeAfterSection from './BeforeAfterSection';
 import Testimonials from './Testimonials';
 import BlogSection from './BlogSection';
 import ContactForm from './ContactForm';
 import Footer from '../layout/Footer';
+import './LandingPage.css';
 
 const LandingPage = () => {
   // Scroll to top on component mount
@@ -18,15 +19,15 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="landing-page">
       <Header />
-      <main>
+      <main className="landing-page-main">
         <HeroSection />
         <AboutSection />
         <Features />
         <Services />
         <Doctors />
-        <BeforeAfterGallery />
+        <BeforeAfterSection />
         <Testimonials />
         <BlogSection />
         <ContactForm />

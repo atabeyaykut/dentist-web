@@ -1,0 +1,88 @@
+/* About Section Styles */
+.about-section {
+  padding: 6rem 0;
+  background-color: white;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-header {
+  text-align: center;
+}
+
+.about-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-divider {
+  width: 5rem;
+  height: 0.25rem;
+  background-color: #0891b2;
+  margin: 0 auto 2.5rem;
+}
+
+.about-description {
+  color: #4b5563;
+  max-width: 48rem;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.about-main-description {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.about-card {
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.about-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0e7490;
+  margin-bottom: 1rem;
+}
+
+.about-card-text {
+  color: #4b5563;
+}
+
+.about-values-list {
+  color: #4b5563;
+}
+
+.about-values-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 3rem;
+  }
+  
+  .about-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}

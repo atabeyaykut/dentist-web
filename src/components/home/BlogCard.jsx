@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import './BlogCard.css';
 
 const BlogCard = ({ title, excerpt, image, date, category }) => {
   return (
@@ -8,33 +9,33 @@ const BlogCard = ({ title, excerpt, image, date, category }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+      className="blog-card"
     >
-      <div className="relative">
+      <div className="blog-card-image-container">
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-48 object-cover"
+          className="blog-card-image"
           loading="lazy"
         />
         {category && (
-          <div className="absolute top-4 left-4 bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+          <div className="blog-card-category">
             {category}
           </div>
         )}
       </div>
       
-      <div className="p-6">
-        <div className="text-gray-500 text-sm mb-2">{date}</div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-3">{title}</h3>
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{excerpt}</p>
+      <div className="blog-card-content">
+        <div className="blog-card-date">{date}</div>
+        <h3 className="blog-card-title">{title}</h3>
+        <p className="blog-card-excerpt">{excerpt}</p>
         
         <a 
           href="#" 
-          className="inline-flex items-center text-cyan-600 font-medium hover:text-cyan-700 transition-colors"
+          className="blog-card-link"
         >
           Devamını Oku
-          <ArrowRight size={16} className="ml-1" />
+          <ArrowRight size={16} className="blog-card-link-icon" />
         </a>
       </div>
     </motion.div>

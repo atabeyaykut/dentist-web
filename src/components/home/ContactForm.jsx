@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import './ContactForm.css';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -50,39 +51,39 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="iletisim" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="iletisim" className="contact-section">
+      <div className="contact-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="contact-header"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="contact-title">
             Bize Ulaşın
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+          <div className="contact-divider"></div>
+          <p className="contact-description">
             Sorularınız için bize ulaşın veya randevu talebinde bulunun.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          <div className="lg:col-span-2">
+        <div className="contact-layout">
+          <div className="contact-form-container">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-md p-8"
+              className="contact-form-card"
             >
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6">Bize Ulaşın</h3>
+              <h3 className="contact-form-title">Bize Ulaşın</h3>
               
               <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="firstName" className="form-label">
                       Ad
                     </label>
                     <input
@@ -92,13 +93,13 @@ const ContactForm = () => {
                       value={formData.firstName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                      className="form-input"
                       placeholder="Adınız"
                     />
                   </div>
                   
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                  <div className="form-group">
+                    <label htmlFor="lastName" className="form-label">
                       Soyad
                     </label>
                     <input
@@ -108,15 +109,15 @@ const ContactForm = () => {
                       value={formData.lastName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                      className="form-input"
                       placeholder="Soyadınız"
                     />
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="phone" className="form-label">
                       Telefon
                     </label>
                     <input
@@ -126,13 +127,13 @@ const ContactForm = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                      className="form-input"
                       placeholder="Telefon Numaranız"
                     />
                   </div>
                   
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <div className="form-group">
+                    <label htmlFor="email" className="form-label">
                       E-posta
                     </label>
                     <input
@@ -141,14 +142,14 @@ const ContactForm = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
+                      className="form-input"
                       placeholder="E-posta Adresiniz"
                     />
                   </div>
                 </div>
                 
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <div className="form-group">
+                  <label htmlFor="message" className="form-label">
                     Mesaj
                   </label>
                   <textarea
@@ -158,25 +159,25 @@ const ContactForm = () => {
                     onChange={handleChange}
                     required
                     rows="5"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all resize-none"
+                    className="form-textarea"
                     placeholder="Mesajınız..."
                   ></textarea>
                 </div>
                 
-                <div className="flex items-center">
+                <div className="form-submit-container">
                   <Button 
                     type="submit" 
                     variant="cyan" 
                     size="lg"
                     disabled={isSubmitting}
-                    className="flex items-center"
+                    className="form-submit-button"
                   >
                     {isSubmitting ? 'Gönderiliyor...' : 'Mesaj Gönder'}
-                    {!isSubmitting && <Send size={16} className="ml-2" />}
+                    {!isSubmitting && <Send size={16} className="form-submit-icon" />}
                   </Button>
                   
                   {submitSuccess && (
-                    <span className="ml-4 text-green-600 font-medium">
+                    <span className="form-submit-success">
                       Mesajınız başarıyla gönderildi!
                     </span>
                   )}
@@ -185,44 +186,44 @@ const ContactForm = () => {
             </motion.div>
           </div>
           
-          <div>
+          <div className="contact-info-container">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-md p-8 h-full"
+              className="contact-info-card"
             >
-              <h3 className="text-2xl font-semibold text-gray-800 mb-6">İletişim Bilgileri</h3>
+              <h3 className="contact-info-title">İletişim Bilgileri</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-cyan-100 p-3 rounded-lg mr-4">
-                    <Phone size={20} className="text-cyan-700" />
+              <div className="contact-info-list">
+                <div className="contact-info-item">
+                  <div className="contact-info-icon-container">
+                    <Phone size={20} className="contact-info-icon" />
                   </div>
-                  <div>
-                    <h4 className="font-medium text-gray-800">Telefon</h4>
-                    <p className="text-gray-600">+90 (212) 123 45 67</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-cyan-100 p-3 rounded-lg mr-4">
-                    <Mail size={20} className="text-cyan-700" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-800">E-posta</h4>
-                    <p className="text-gray-600">info@uniqdent.com</p>
+                  <div className="contact-info-content">
+                    <h4 className="contact-info-label">Telefon</h4>
+                    <p className="contact-info-text">+90 (212) 123 45 67</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="bg-cyan-100 p-3 rounded-lg mr-4">
-                    <MapPin size={20} className="text-cyan-700" />
+                <div className="contact-info-item">
+                  <div className="contact-info-icon-container">
+                    <Mail size={20} className="contact-info-icon" />
                   </div>
-                  <div>
-                    <h4 className="font-medium text-gray-800">Adres</h4>
-                    <p className="text-gray-600">
+                  <div className="contact-info-content">
+                    <h4 className="contact-info-label">E-posta</h4>
+                    <p className="contact-info-text">info@uniqdent.com</p>
+                  </div>
+                </div>
+                
+                <div className="contact-info-item">
+                  <div className="contact-info-icon-container">
+                    <MapPin size={20} className="contact-info-icon" />
+                  </div>
+                  <div className="contact-info-content">
+                    <h4 className="contact-info-label">Adres</h4>
+                    <p className="contact-info-text">
                       Bağdat Caddesi No:123<br />
                       Kadıköy, İstanbul
                     </p>
@@ -230,12 +231,12 @@ const ContactForm = () => {
                 </div>
               </div>
               
-              <div className="mt-8">
-                <h4 className="font-medium text-gray-800 mb-3">Çalışma Saatleri</h4>
-                <div className="space-y-2 text-gray-600">
-                  <p>Pazartesi - Cuma: 09:00 - 19:00</p>
-                  <p>Cumartesi: 10:00 - 16:00</p>
-                  <p>Pazar: Kapalı</p>
+              <div className="working-hours">
+                <h4 className="working-hours-title">Çalışma Saatleri</h4>
+                <div className="working-hours-list">
+                  <p className="working-hours-item">Pazartesi - Cuma: 09:00 - 19:00</p>
+                  <p className="working-hours-item">Cumartesi: 10:00 - 16:00</p>
+                  <p className="working-hours-item">Pazar: Kapalı</p>
                 </div>
               </div>
             </motion.div>

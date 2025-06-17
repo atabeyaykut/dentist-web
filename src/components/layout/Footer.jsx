@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -49,32 +50,32 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-6">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="site-footer">
+      <div className="footer-container">
+        <div className="footer-content">
           {/* Logo and Description */}
-          <div>
-            <div className="mb-4">
-              <span className="text-xl font-bold">
-                <span className="text-cyan-600">Dt. Ataben Efe</span>
-                <span className="text-white"> Çelik</span>
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <span className="footer-logo-text">
+                <span className="footer-logo-highlight">Dt. Ataben Efe</span>
+                <span className="footer-logo-normal"> Çelik</span>
               </span>
             </div>
-            <p className="text-gray-400 mb-6">
-              Modern diş hekimliği yaklaşımı ile gülüşünüzü yeniden tasarlıyoruz. 
+            <p className="footer-description">
+              Modern diş hekimliği yaklaşımı ile gülüşünüzü yeniden tasarılıyoruz. 
               Uzman kadromuz ve son teknoloji ekipmanlarımızla yanınızdayız.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 hover:bg-cyan-600 transition-colors p-2 rounded-full">
+            <div className="footer-social-links">
+              <a href="#" className="footer-social-link">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-cyan-600 transition-colors p-2 rounded-full">
+              <a href="#" className="footer-social-link">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-cyan-600 transition-colors p-2 rounded-full">
+              <a href="#" className="footer-social-link">
                 <Twitter size={18} />
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-cyan-600 transition-colors p-2 rounded-full">
+              <a href="#" className="footer-social-link">
                 <Linkedin size={18} />
               </a>
             </div>
@@ -82,16 +83,16 @@ const Footer = () => {
           
           {/* Footer Links */}
           {footerLinks.map((column, index) => (
-            <div key={index}>
-              <h3 className="text-lg font-semibold mb-4">{column.title}</h3>
-              <ul className="space-y-2">
+            <div key={index} className="footer-links-column">
+              <h3 className="footer-column-title">{column.title}</h3>
+              <ul className="footer-links-list">
                 {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
+                  <li key={linkIndex} className="footer-links-item">
                     <a 
                       href={link.href} 
-                      className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center"
+                      className="footer-link"
                     >
-                      {link.icon && link.icon}
+                      {link.icon && <span className="footer-link-icon">{link.icon}</span>}
                       {link.name}
                     </a>
                   </li>
@@ -102,18 +103,18 @@ const Footer = () => {
         </div>
         
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+        <div className="footer-bottom">
+          <p className="footer-copyright">
             &copy; {currentYear} UniQDent. Tüm hakları saklıdır.
           </p>
-          <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+          <div className="footer-legal-links">
+            <a href="#" className="footer-legal-link">
               Gizlilik Politikası
             </a>
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+            <a href="#" className="footer-legal-link">
               Kullanım Şartları
             </a>
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+            <a href="#" className="footer-legal-link">
               KVKK
             </a>
           </div>

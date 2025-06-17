@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import { Shield, Clock, Award } from 'lucide-react';
+import './Features.css';
 
 const FeatureCard = ({ icon: Icon, title, description, delay }) => {
   const ref = useRef(null);
@@ -13,13 +14,13 @@ const FeatureCard = ({ icon: Icon, title, description, delay }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay }}
-      className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+      className="feature-card"
     >
-      <div className="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-        <Icon size={28} className="text-cyan-700" />
+      <div className="feature-icon-container">
+        <Icon size={28} className="feature-icon" />
       </div>
-      <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">{title}</h3>
-      <p className="text-gray-600 text-center">{description}</p>
+      <h3 className="feature-title">{title}</h3>
+      <p className="feature-description">{description}</p>
     </motion.div>
   );
 };
@@ -44,22 +45,22 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="features-section">
+      <div className="features-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="features-header"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="features-title">
             Neden Bizi Tercih Etmelisiniz?
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
+          <div className="features-divider"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="features-grid">
           {featuresData.map((feature, index) => (
             <FeatureCard
               key={index}

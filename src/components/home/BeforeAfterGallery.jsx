@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+import './BeforeAfterGallery.css';
 
 const BeforeAfterItem = ({ before, after, description }) => {
   return (
@@ -9,41 +10,41 @@ const BeforeAfterItem = ({ before, after, description }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="flex flex-col md:flex-row gap-4 bg-white p-6 rounded-xl shadow-md"
+      className="before-after-item"
     >
-      <div className="flex-1">
-        <div className="relative">
+      <div className="before-after-column">
+        <div className="image-container">
           <img 
             src={before} 
             alt="Tedavi Öncesi" 
-            className="w-full h-64 object-cover rounded-lg"
+            className="before-after-image"
             loading="lazy"
           />
-          <div className="absolute top-0 left-0 bg-gray-800 bg-opacity-70 text-white text-xs font-bold px-3 py-1 m-2 rounded">
+          <div className="before-label">
             Öncesi
           </div>
         </div>
       </div>
       
-      <div className="flex-1">
-        <div className="relative">
+      <div className="before-after-column">
+        <div className="image-container">
           <img 
             src={after} 
             alt="Tedavi Sonrası" 
-            className="w-full h-64 object-cover rounded-lg"
+            className="before-after-image"
             loading="lazy"
           />
-          <div className="absolute top-0 left-0 bg-cyan-600 bg-opacity-70 text-white text-xs font-bold px-3 py-1 m-2 rounded">
+          <div className="after-label">
             Sonrası
           </div>
         </div>
       </div>
       
-      <div className="mt-4 md:mt-0 md:w-40 flex flex-col justify-center items-center">
-        <div className="w-full h-0.5 md:w-0.5 md:h-full bg-gray-200 relative">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center text-white">
-            <ChevronRight className="hidden md:block" size={20} />
-            <ChevronDown className="md:hidden" size={20} />
+      <div className="arrow-container">
+        <div className="arrow-line">
+          <div className="arrow-circle">
+            <ChevronRight className="arrow-icon-horizontal" size={20} />
+            <ChevronDown className="arrow-icon-vertical" size={20} />
           </div>
         </div>
       </div>
@@ -73,33 +74,33 @@ const BeforeAfterGallery = () => {
   ];
 
   return (
-    <section id="galeri" className="py-24 bg-white">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="galeri" className="gallery-section">
+      <div className="gallery-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="gallery-header"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="gallery-title">
             Öncesi ve Sonrası
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+          <div className="gallery-divider"></div>
+          <p className="gallery-description">
             Hastalarımızın tedavi öncesi ve sonrası gülüşlerindeki değişimi görün.
           </p>
         </motion.div>
 
-        <div className="space-y-10">
+        <div className="gallery-items">
           {galleryItems.map((item, index) => (
-            <div key={index} className="mb-12">
+            <div key={index} className="gallery-item-wrapper">
               <BeforeAfterItem
                 before={item.before}
                 after={item.after}
               />
-              <div className="text-center mt-4">
-                <h3 className="text-xl font-medium text-gray-800">{item.description}</h3>
+              <div className="gallery-item-description">
+                <h3 className="gallery-item-title">{item.description}</h3>
               </div>
             </div>
           ))}

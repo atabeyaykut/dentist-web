@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import DoctorCard from './DoctorCard';
+import './Doctors.css';
 
 const Doctors = () => {
   const doctors = [
@@ -24,25 +25,25 @@ const Doctors = () => {
   ];
 
   return (
-    <section id="doktorlar" className="py-24 bg-white">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="doktorlar" className="doctors-section">
+      <div className="doctors-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="doctors-header"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="doctors-title">
             Uzman Kadromuz
           </h2>
-          <div className="w-20 h-1 bg-cyan-600 mx-auto mb-10"></div>
-          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg">
+          <div className="doctors-divider"></div>
+          <p className="doctors-description">
             Alanında uzman ve deneyimli doktorlarımızla size en iyi hizmeti sunuyoruz.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="doctors-grid">
           {doctors.map((doctor, index) => (
             <DoctorCard
               key={index}
