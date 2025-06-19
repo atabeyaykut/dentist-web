@@ -5,22 +5,32 @@ import './Doctors.css';
 const Doctors = () => {
   const doctors = [
     {
-      name: "Ayşe Yılmaz",
-      title: "Ortodonti Uzmanı",
-      imgSrc: "https://picsum.photos/id/64/400/500",
-      badge: "Ortodonti"
+      name: "Ataben Efe Çelik",
+      title: "Başhekim",
+      specialty: "Estetik Diş Hekimi",
+      imgSrc: "https://picsum.photos/id/1009/300/400",
+      badge: "Başhekim"
+    },
+    {
+      name: "Zeynep Yılmaz",
+      title: "Ortodontist",
+      specialty: "Ortodonti Uzmanı",
+      imgSrc: "https://picsum.photos/id/1011/300/400",
+      badge: "Uzman Ortodonti"
     },
     {
       name: "Mehmet Kaya",
       title: "Ağız, Diş ve Çene Cerrahisi",
-      imgSrc: "https://picsum.photos/id/91/400/500",
+      specialty: "Implant ve Cerrahi Operasyonlar",
+      imgSrc: "https://picsum.photos/id/1015/300/400",
       badge: "Cerrahi"
     },
     {
-      name: "Zeynep Demir",
-      title: "Estetik Diş Hekimi",
-      imgSrc: "https://picsum.photos/id/65/400/500",
-      badge: "Estetik"
+      name: "Ayşe Demir",
+      title: "Endodontist",
+      specialty: "Kanal Tedavisi",
+      imgSrc: "https://picsum.photos/id/1001/300/400",
+      badge: "Uzman"
     }
   ];
 
@@ -49,10 +59,23 @@ const Doctors = () => {
               key={index}
               name={doctor.name}
               title={doctor.title}
+              specialty={doctor.specialty}
               imgSrc={doctor.imgSrc}
               badge={doctor.badge}
             />
           ))}
+        </div>
+        
+        <div className="doctors-cta">
+          <motion.button 
+            className="doctors-cta-button"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            Tüm Doktorlarımız
+          </motion.button>
         </div>
       </div>
     </section>

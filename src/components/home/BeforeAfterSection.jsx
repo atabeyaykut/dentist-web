@@ -8,23 +8,29 @@ const BeforeAfterSection = () => {
     {
       id: 1,
       title: 'Diş Beyazlatma',
-      description: 'Profesyonel diş beyazlatma tedavisi ile daha parlak ve beyaz bir gülümseme.',
-      beforeImage: 'https://picsum.photos/id/64/800/600',
-      afterImage: 'https://picsum.photos/id/65/800/600',
+      description: 'Günlük hayatımızda dişlerimizde birçok lekelenme faktörü ile karşılaşır ve zamanla renkler solarak bir görünüm oluşur.',
+      beforeImage: 'https://picsum.photos/id/366/800/600',
+      afterImage: 'https://picsum.photos/id/250/800/600',
+      category: 'KOZMETIÇ DIŞ HEKIMLIĞI',
+      buttonText: 'TEDAVI HAKKINDA'
     },
     {
       id: 2,
-      title: 'Diş İmplantı',
-      description: 'Eksik dişlerin yerine doğal görünümlü ve fonksiyonel implant tedavisi.',
-      beforeImage: 'https://picsum.photos/id/177/800/600',
-      afterImage: 'https://picsum.photos/id/180/800/600',
+      title: 'Gülüş Tasarımı',
+      description: 'Estetik ve sağlıklı bir gülüş, kişisel imajınızı en önemli parçalarından biridir ve kendimize olan güvenimizi artır.',
+      beforeImage: 'https://picsum.photos/id/342/800/600',
+      afterImage: 'https://picsum.photos/id/349/800/600',
+      category: 'KOZMETIÇ DIŞ HEKIMLIĞI',
+      buttonText: 'TEDAVI HAKKINDA'
     },
     {
       id: 3,
-      title: 'Ortodonti',
-      description: 'Modern ortodontik tedaviler ile düzgün ve estetik bir diş dizilimi.',
-      beforeImage: 'https://picsum.photos/id/237/800/600',
-      afterImage: 'https://picsum.photos/id/240/800/600',
+      title: 'Estetik Dolgu',
+      description: 'Güzel bir gülüş, hayatımızın her alanında önemli bir yeri olan güvenimizi artırır ve kendimizi daha iyi hissetmemizi sağlar.',
+      beforeImage: 'https://picsum.photos/id/26/800/600',
+      afterImage: 'https://picsum.photos/id/96/800/600',
+      category: 'KOZMETIÇ DIŞ HEKIMLIĞI',
+      buttonText: 'TEDAVI HAKKINDA'
     }
   ];
 
@@ -53,36 +59,29 @@ const BeforeAfterSection = () => {
   return (
     <section className="before-after-section">
       <div className="before-after-container">
-        <motion.div 
-          className="before-after-header"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="before-after-title">Tedavi Sonuçlarımız</h2>
-          <p className="before-after-subtitle">
-            Kliniğimizde gerçekleştirilen tedavilerin öncesi ve sonrası görüntüleri
-          </p>
-        </motion.div>
 
-        <motion.div 
-          className="before-after-examples"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {treatmentExamples.map((treatment) => (
+        {treatmentExamples.map((treatment, index) => (
+          <div key={treatment.id} className={`treatment-row ${index % 2 === 1 ? 'reverse' : ''}`}>
             <motion.div 
-              key={treatment.id} 
-              className="before-after-example"
-              variants={itemVariants}
+              className="treatment-content"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="example-content">
-                <h3 className="example-title">{treatment.title}</h3>
-                <p className="example-description">{treatment.description}</p>
-              </div>
+              <span className="treatment-category">{treatment.category}</span>
+              <h2 className="treatment-title">{treatment.title}</h2>
+              <p className="treatment-description">{treatment.description}</p>
+              <button className="treatment-button">{treatment.buttonText}</button>
+            </motion.div>
+            
+            <motion.div 
+              className="treatment-slider"
+              initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <BeforeAfterSlider
                 beforeImage={treatment.beforeImage}
                 afterImage={treatment.afterImage}
@@ -90,8 +89,8 @@ const BeforeAfterSection = () => {
                 afterAlt={`${treatment.title} sonrası`}
               />
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
+        ))}
       </div>
     </section>
   );

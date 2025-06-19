@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
-import { Shield, Clock, Award } from 'lucide-react';
+import { Shield, Clock, Award, CheckCircle } from 'lucide-react';
 import './Features.css';
 
 const FeatureCard = ({ icon: Icon, title, description, delay }) => {
@@ -21,6 +21,20 @@ const FeatureCard = ({ icon: Icon, title, description, delay }) => {
       </div>
       <h3 className="feature-title">{title}</h3>
       <p className="feature-description">{description}</p>
+      <ul className="feature-list">
+        <li>
+          <CheckCircle size={16} className="feature-check-icon" />
+          <span>Uzman Kadro</span>
+        </li>
+        <li>
+          <CheckCircle size={16} className="feature-check-icon" />
+          <span>Modern Ekipman</span>
+        </li>
+        <li>
+          <CheckCircle size={16} className="feature-check-icon" />
+          <span>Uygun Fiyat</span>
+        </li>
+      </ul>
     </motion.div>
   );
 };
@@ -41,6 +55,11 @@ const Features = () => {
       icon: Award,
       title: "Uzman Kadro",
       description: "Alanında uzman, sürekli kendini geliştiren hekim kadromuzla kaliteli hizmet sunuyoruz."
+    },
+    {
+      icon: Shield,
+      title: "Modern Teknoloji",
+      description: "En son teknolojik cihazlar ve yöntemlerle ağrısız tedavi imkanı sunuyoruz."
     }
   ];
 
@@ -58,10 +77,13 @@ const Features = () => {
             Neden Bizi Tercih Etmelisiniz?
           </h2>
           <div className="features-divider"></div>
+          <p className="features-description">
+            Kliniğimizde sunduğumuz avantajlar ve hizmet kalitemiz ile fark yaratıyoruz.
+          </p>
         </motion.div>
 
         <div className="features-grid">
-          {featuresData.map((feature, index) => (
+          {featuresData.slice(0, 4).map((feature, index) => (
             <FeatureCard
               key={index}
               icon={feature.icon}

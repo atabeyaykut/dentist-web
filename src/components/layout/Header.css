@@ -7,19 +7,82 @@
   z-index: 50;
   transition: all 0.3s ease;
   background-color: white;
-  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.header-scrolled {
+/* Top Bar */
+.header-top-bar {
+  background-color: #14b8a6;
+  color: white;
+  padding: 0.5rem 0;
+}
+
+.header-top-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.header-phone-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.header-phone-icon {
+  margin-right: 0.5rem;
+}
+
+.header-social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-social-link {
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.header-social-link:hover {
+  opacity: 0.8;
+}
+
+.header-social-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Main Header */
+.header-main {
+  background-color: white;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.header-scrolled .header-main {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
 }
 
 .header-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,7 +99,8 @@
 }
 
 .header-logo {
-  height: auto;
+  height: 50px;
+  width: auto;
 }
 
 /* Desktop Navigation */
@@ -51,19 +115,28 @@
   font-size: 0.875rem;
   transition: color 0.3s ease;
   margin-right: 1.5rem;
+  text-decoration: none;
 }
 
 .header-nav-link:hover {
-  color: #0891b2;
+  color: #14b8a6;
 }
 
 .header-cta-button {
   margin-left: 1rem;
-  background-color: #0891b2;
+  background-color: #14b8a6;
   color: white;
-  border-radius: 9999px;
+  border-radius: 0.375rem;
   padding: 0.5rem 1.5rem;
   font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.header-cta-button:hover {
+  background-color: #0d9488;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(20, 184, 166, 0.25);
 }
 
 /* Mobile Menu Button */

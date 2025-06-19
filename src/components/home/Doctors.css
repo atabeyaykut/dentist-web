@@ -1,14 +1,14 @@
 /* Doctors Section Styles */
 .doctors-section {
   padding: 6rem 0;
-  background-color: white;
+  background-color: #f8f9fa;
 }
 
 .doctors-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .doctors-header {
@@ -17,7 +17,7 @@
 }
 
 .doctors-title {
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 1.5rem;
@@ -27,8 +27,9 @@
 .doctors-divider {
   width: 5rem;
   height: 0.25rem;
-  background-color: #0891b2;
-  margin: 0 auto 2.5rem;
+  background-color: #14b8a6;
+  margin: 0 auto 2rem;
+  border-radius: 4px;
 }
 
 .doctors-description {
@@ -44,15 +45,47 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.doctors-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.doctors-cta-button {
+  background-color: #14b8a6;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.doctors-cta-button:hover {
+  background-color: #0d9488;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Media Queries */
-@media (min-width: 768px) {
+@media (min-width: 640px) {
+  .doctors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
   .doctors-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .doctors-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }

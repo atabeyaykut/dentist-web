@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Smile, Heart, Stethoscope, Scissors } from 'lucide-react';
+import { Sparkles, Smile, Heart, Stethoscope, Scissors, ArrowRight } from 'lucide-react';
 import './Services.css';
 
-const ServiceCard = ({ icon: Icon, title, description }) => {
+const ServiceCard = ({ icon: Icon, title, description, image }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -12,14 +12,19 @@ const ServiceCard = ({ icon: Icon, title, description }) => {
       viewport={{ once: true }}
       className="service-card"
     >
-      <div className="service-card-content">
+      <div className="service-image-container">
+        <img src={image} alt={title} className="service-image" />
         <div className="service-icon-container">
           <Icon size={24} className="service-icon" />
         </div>
-        <div className="service-text-container">
-          <h3 className="service-title">{title}</h3>
-          <p className="service-description">{description}</p>
-        </div>
+      </div>
+      <div className="service-card-content">
+        <h3 className="service-title">{title}</h3>
+        <p className="service-description">{description}</p>
+        <a href="#" className="service-link">
+          <span>Daha Fazla</span>
+          <ArrowRight size={16} className="service-link-icon" />
+        </a>
       </div>
     </motion.div>
   );
@@ -42,42 +47,48 @@ const Services = () => {
       category: 'aesthetic',
       icon: Smile,
       title: 'Diş Beyazlatma',
-      description: 'Profesyonel diş beyazlatma işlemi ile daha parlak ve beyaz dişlere kavuşun.'
+      description: 'Profesyonel diş beyazlatma işlemi ile daha parlak ve beyaz dişlere kavuşun.',
+      image: '/images/services/teeth-whitening.jpg'
     },
     {
       id: 2,
       category: 'aesthetic',
       icon: Sparkles,
       title: 'Laminate Veneer',
-      description: 'İnce porselen kaplamalar ile dişlerinizin şeklini ve rengini değiştirin.'
+      description: 'İnce porselen kaplamalar ile dişlerinizin şeklini ve rengini değiştirin.',
+      image: '/images/services/laminate-veneer.jpg'
     },
     {
       id: 3,
       category: 'surgical',
       icon: Scissors,
       title: 'İmplant Uygulamaları',
-      description: 'Eksik dişlerinizi tamamlamak için kalıcı ve doğal görünümlü implant çözümleri.'
+      description: 'Eksik dişlerinizi tamamlamak için kalıcı ve doğal görünümlü implant çözümleri.',
+      image: '/images/services/implant.jpg'
     },
     {
       id: 4,
       category: 'general',
       icon: Heart,
       title: 'Kanal Tedavisi',
-      description: 'Ağrılı dişlerinizi çekim yapmadan kurtarmanın en etkili yolu.'
+      description: 'Ağrılı dişlerinizi çekim yapmadan kurtarmanın en etkili yolu.',
+      image: '/images/services/root-canal.jpg'
     },
     {
       id: 5,
       category: 'general',
       icon: Sparkles,
       title: 'Dolgu Tedavisi',
-      description: 'Çürük dişlerinizi estetik ve dayanıklı dolgular ile onarıyoruz.'
+      description: 'Çürük dişlerinizi estetik ve dayanıklı dolgular ile onarıyoruz.',
+      image: '/images/services/filling.jpg'
     },
     {
       id: 6,
       category: 'children',
       icon: Stethoscope,
       title: 'Çocuk Diş Hekimliği',
-      description: 'Çocukların diş sağlığını korumak için özel yaklaşım ve tedavi yöntemleri.'
+      description: 'Çocukların diş sağlığını korumak için özel yaklaşım ve tedavi yöntemleri.',
+      image: '/images/services/pediatric.jpg'
     }
   ];
   
@@ -123,6 +134,7 @@ const Services = () => {
               icon={service.icon}
               title={service.title}
               description={service.description}
+              image={service.image}
             />
           ))}
         </div>

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './BeforeAfterSlider.css';
 
 const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = 'Before', afterAlt = 'After' }) => {
@@ -64,30 +65,33 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, beforeAlt = 'Before', afte
   }, []);
 
   return (
-    <div className="before-after-container" ref={containerRef}>
-      <div 
-        className="before-image-container"
-        style={{ width: `${sliderPosition}%` }}
-      >
-        <img src={beforeImage} alt={beforeAlt} className="before-image" />
-        <div className="image-label before-label">Öncesi</div>
-      </div>
-      
-      <div className="after-image-container">
-        <img src={afterImage} alt={afterAlt} className="after-image" />
-        <div className="image-label after-label">Sonrası</div>
-      </div>
-      
-      <div 
-        className="slider-handle"
-        style={{ left: `${sliderPosition}%` }}
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-        ref={sliderRef}
-      >
-        <div className="slider-arrow left-arrow">&#10094;</div>
-        <div className="slider-line"></div>
-        <div className="slider-arrow right-arrow">&#10095;</div>
+    <div className="before-after-wrapper">
+      <div className="before-after-container" ref={containerRef}>
+        <div 
+          className="before-image-container"
+          style={{ width: `${sliderPosition}%` }}
+        >
+          <img src={beforeImage} alt={beforeAlt} className="before-image" />
+          <div className="image-label before-label">önce</div>
+        </div>
+        
+        <div className="after-image-container">
+          <img src={afterImage} alt={afterAlt} className="after-image" />
+          <div className="image-label after-label">sonra</div>
+        </div>
+        
+        <div 
+          className="slider-handle"
+          style={{ left: `${sliderPosition}%` }}
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart}
+          ref={sliderRef}
+        >
+          <div className="slider-control">
+            <ChevronLeft className="slider-icon" />
+            <ChevronRight className="slider-icon" />
+          </div>
+        </div>
       </div>
     </div>
   );

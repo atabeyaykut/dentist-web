@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 import './Testimonials.css';
 
-const TestimonialCard = ({ name, rating, comment, date }) => {
+const TestimonialCard = ({ name, rating, comment, date, image }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -11,15 +11,11 @@ const TestimonialCard = ({ name, rating, comment, date }) => {
       viewport={{ once: true }}
       className="testimonial-card"
     >
-      <div className="testimonial-header">
-        <div className="testimonial-avatar">
-          <span className="testimonial-initial">{name.charAt(0)}</span>
-        </div>
-        <div className="testimonial-user-info">
-          <h4 className="testimonial-user-name">{name}</h4>
-          <p className="testimonial-date">{date}</p>
-        </div>
+      <div className="testimonial-quote-icon">
+        <Quote size={24} />
       </div>
+      
+      <p className="testimonial-comment">{comment}</p>
       
       <div className="testimonial-rating">
         {[...Array(5)].map((_, i) => (
@@ -31,7 +27,19 @@ const TestimonialCard = ({ name, rating, comment, date }) => {
         ))}
       </div>
       
-      <p className="testimonial-comment">{comment}</p>
+      <div className="testimonial-footer">
+        <div className="testimonial-avatar">
+          {image ? (
+            <img src={image} alt={name} className="testimonial-image" />
+          ) : (
+            <span className="testimonial-initial">{name.charAt(0)}</span>
+          )}
+        </div>
+        <div className="testimonial-user-info">
+          <h4 className="testimonial-user-name">{name}</h4>
+          <p className="testimonial-date">{date}</p>
+        </div>
+      </div>
     </motion.div>
   );
 };
@@ -42,25 +50,43 @@ const Testimonials = () => {
       name: "Ahmet Yılmaz",
       rating: 5,
       comment: "Çok profesyonel bir ekip. İmplant tedavim ağrısız ve sorunsuz geçti. Tüm ekibe teşekkür ederim.",
-      date: "2 hafta önce"
+      date: "2 hafta önce",
+      image: "https://picsum.photos/id/1025/300/300"
     },
     {
       name: "Ayşe Kaya",
       rating: 5,
       comment: "Diş fobim vardı ama Dr. Zeynep sayesinde artık diş hekimine gitmekten korkmuyorum. Çok teşekkürler!",
-      date: "1 ay önce"
+      date: "1 ay önce",
+      image: "https://picsum.photos/id/1027/300/300"
     },
     {
       name: "Mehmet Demir",
       rating: 4,
       comment: "Ortodonti tedavim için tercih ettim ve sonuçtan çok memnunum. Gülümsememe kavuştum.",
-      date: "3 hafta önce"
+      date: "3 hafta önce",
+      image: "https://picsum.photos/id/1012/300/300"
     },
     {
       name: "Zehra Şahin",
       rating: 5,
       comment: "Çocuğum için gittiğimiz ilk diş hekimi deneyimi harikaydi. Çok sabırlı ve ilgili davrandılar.",
-      date: "1 hafta önce"
+      date: "1 hafta önce",
+      image: "https://picsum.photos/id/1014/300/300"
+    },
+    {
+      name: "Emre Yıldız",
+      rating: 5,
+      comment: "Diş beyazlatma işlemi sonrası gülüşüm tamamen değişti. Profesyonel ekip ve kaliteli hizmet.",
+      date: "2 ay önce",
+      image: "https://picsum.photos/id/1006/300/300"
+    },
+    {
+      name: "Selin Öztürk",
+      rating: 5,
+      comment: "Laminate veneer uygulaması için tercih ettim ve sonuçtan çok memnunum. Doğal ve estetik bir gülüş.",
+      date: "3 ay önce",
+      image: "https://picsum.photos/id/1000/300/300"
     }
   ];
 
@@ -90,11 +116,11 @@ const Testimonials = () => {
           className="testimonials-header"
         >
           <h2 className="testimonials-title">
-            Müşteri Yorumları
+            Hasta Yorumları
           </h2>
           <div className="testimonials-divider"></div>
           <p className="testimonials-description">
-            Hastalarımızın bizimle ilgili düşünceleri ve deneyimleri.
+            Hastalarımızın bizimle ilgili değerli düşünceleri ve deneyimleri
           </p>
         </motion.div>
 
@@ -106,8 +132,21 @@ const Testimonials = () => {
               rating={testimonial.rating}
               comment={testimonial.comment}
               date={testimonial.date}
+              image={testimonial.image}
             />
           ))}
+        </div>
+
+        <div className="testimonials-cta">
+          <motion.button 
+            className="testimonials-cta-button"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            Tüm Yorumlar
+          </motion.button>
         </div>
 
         <div className="social-media-section">

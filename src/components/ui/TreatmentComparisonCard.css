@@ -1,0 +1,125 @@
+.treatment-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.treatment-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.treatment-card-content {
+  flex: 1;
+  padding: 2.5rem;
+}
+
+.treatment-card-slider {
+  flex: 1.2;
+}
+
+.treatment-card-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.treatment-card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.treatment-card-description {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.treatment-card-button {
+  display: inline-block;
+  background-color: transparent;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.treatment-card-button:hover {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .treatment-card-title {
+    font-size: 1.75rem;
+  }
+  
+  .treatment-card {
+    gap: 2rem;
+  }
+  
+  .treatment-card-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .treatment-card, 
+  .treatment-card.reverse {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .treatment-card-content,
+  .treatment-card-slider {
+    width: 100%;
+    flex: none;
+  }
+  
+  .treatment-card-content {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  }
+  
+  .treatment-card-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .treatment-card-title {
+    font-size: 1.25rem;
+  }
+  
+  .treatment-card-description {
+    font-size: 0.875rem;
+  }
+  
+  .treatment-card-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .treatment-card-content {
+    padding: 1.25rem 1.25rem 0.5rem 1.25rem;
+  }
+}

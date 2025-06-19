@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="hero-background">
         <img
-          src="https://picsum.photos/id/1048/1920/1080"
+          src="/images/hero/hero-background.jpg"
           alt="Dental Office"
           className="hero-image"
         />

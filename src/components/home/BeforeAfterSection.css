@@ -1,11 +1,12 @@
 .before-after-section {
-  padding: 4rem 1rem;
-  background-color: #f8fafc;
+  padding: 5rem 1.5rem;
+  background-color: #fff;
 }
 
 .before-after-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .before-after-header {
@@ -30,15 +31,17 @@
 .before-after-examples {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
+  width: 100%;
 }
 
 .before-after-example {
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 100%;
 }
 
 .example-content {
@@ -57,36 +60,117 @@
   line-height: 1.6;
 }
 
+.treatment-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+.treatment-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.treatment-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+.treatment-slider {
+  flex: 1.2;
+}
+
+.treatment-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.treatment-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.treatment-description {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.treatment-button {
+  background-color: transparent;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.treatment-button:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
 /* Responsive styles */
-@media (min-width: 768px) {
-  .before-after-section {
-    padding: 5rem 2rem;
+@media (max-width: 1024px) {
+  .treatment-title {
+    font-size: 1.75rem;
   }
   
-  .before-after-title {
-    font-size: 3rem;
-  }
-  
-  .before-after-subtitle {
-    font-size: 1.25rem;
-  }
-  
-  .before-after-examples {
-    grid-template-columns: repeat(2, 1fr);
+  .treatment-row {
     gap: 2rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 768px) {
+  .treatment-row, 
+  .treatment-row.reverse {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .treatment-content,
+  .treatment-slider {
+    width: 100%;
+    flex: none;
+  }
+  
+  .treatment-title {
+    font-size: 1.5rem;
+  }
+  
   .before-after-section {
-    padding: 6rem 2rem;
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .treatment-title {
+    font-size: 1.25rem;
   }
   
-  .before-after-examples {
-    grid-template-columns: repeat(3, 1fr);
+  .treatment-description {
+    font-size: 0.875rem;
   }
   
-  .example-title {
-    font-size: 1.75rem;
+  .treatment-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .before-after-section {
+    padding: 3rem 1rem;
   }
 }
