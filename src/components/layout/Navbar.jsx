@@ -92,7 +92,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="navbar-logo-container">
             <Link to="/" className="navbar-logo-link">
-              <img src="./DtAtabenLogo.svg" alt="" className="navbar-logo" />
+              <img src="https://picsum.photos/200/50?random=5" alt="" className="navbar-logo" />
             </Link>
             <span className="navbar-tagline">Dental Clinic</span>
           </div>
