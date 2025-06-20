@@ -1,0 +1,55 @@
+/* Treatment Section Styles */
+.treatment-section {
+  padding: 6rem 0;
+  background-color: #f8f9fa;
+}
+
+.treatment-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.treatment-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.treatment-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.treatment-divider {
+  width: 5rem;
+  height: 0.25rem;
+  background-color: #14b8a6;
+  margin: 0 auto;
+}
+
+.treatment-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .treatment-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .treatment-section {
+    padding: 4rem 0;
+  }
+  
+  .treatment-header {
+    margin-bottom: 2rem;
+  }
+}

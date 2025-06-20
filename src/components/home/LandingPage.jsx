@@ -4,6 +4,7 @@ import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import Features from './Features';
 import Doctors from './Doctors';
+import TreatmentSection from './TreatmentSection';
 import Services from './Services';
 import BeforeAfterSection from './BeforeAfterSection';
 import Testimonials from './Testimonials';
@@ -27,6 +28,7 @@ const LandingPage = () => {
         <Features />
         <Services />
         <Doctors />
+        <TreatmentSection />
         <BeforeAfterSection />
         <Testimonials />
         <BlogSection />
