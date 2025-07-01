@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import './BlogCard.css';
 
-const BlogCard = ({ title, excerpt, image, date, category }) => {
+const BlogCard = ({ title, image, category }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -18,23 +18,17 @@ const BlogCard = ({ title, excerpt, image, date, category }) => {
           className="blog-card-image"
           loading="lazy"
         />
-        {category && (
-          <div className="blog-card-category">
-            {category}
-          </div>
-        )}
       </div>
       
       <div className="blog-card-content">
-        <div className="blog-card-date">{date}</div>
+        <div className="blog-card-category">{category}</div>
         <h3 className="blog-card-title">{title}</h3>
-        <p className="blog-card-excerpt">{excerpt}</p>
         
         <a 
           href="#" 
           className="blog-card-link"
         >
-          Devamını Oku
+          DEVAMINI GÖRÜNTÜLE
           <ArrowRight size={16} className="blog-card-link-icon" />
         </a>
       </div>

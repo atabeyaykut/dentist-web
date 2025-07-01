@@ -1,246 +1,57 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import './ContactForm.css';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    console.log('Form data submitted:', formData);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        message: ''
-      });
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 3000);
-    }, 1000);
-  };
 
   return (
     <section id="iletisim" className="contact-section">
       <div className="contact-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="contact-header"
-        >
-          <h2 className="contact-title">
-            Bize Ulaşın
-          </h2>
-          <div className="contact-divider"></div>
-          <p className="contact-description">
-            Sorularınız için bize ulaşın veya randevu talebinde bulunun.
-          </p>
-        </motion.div>
-
-        <div className="contact-layout">
-          <div className="contact-form-container">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="contact-form-card"
-            >
-              <h3 className="contact-form-title">Bize Ulaşın</h3>
-              
-              <form onSubmit={handleSubmit}>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="firstName" className="form-label">
-                      Ad
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      required
-                      className="form-input"
-                      placeholder="Adınız"
-                    />
-                  </div>
-                  
-                  <div className="form-group">
-                    <label htmlFor="lastName" className="form-label">
-                      Soyad
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      required
-                      className="form-input"
-                      placeholder="Soyadınız"
-                    />
-                  </div>
-                </div>
-                
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="phone" className="form-label">
-                      Telefon
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="form-input"
-                      placeholder="Telefon Numaranız"
-                    />
-                  </div>
-                  
-                  <div className="form-group">
-                    <label htmlFor="email" className="form-label">
-                      E-posta
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="form-input"
-                      placeholder="E-posta Adresiniz"
-                    />
-                  </div>
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="message" className="form-label">
-                    Mesaj
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="form-textarea"
-                    placeholder="Mesajınız..."
-                  ></textarea>
-                </div>
-                
-                <div className="form-submit-container">
-                  <Button 
-                    type="submit" 
-                    variant="cyan" 
-                    size="lg"
-                    disabled={isSubmitting}
-                    className="form-submit-button"
-                  >
-                    {isSubmitting ? 'Gönderiliyor...' : 'Mesaj Gönder'}
-                    {!isSubmitting && <Send size={16} className="form-submit-icon" />}
-                  </Button>
-                  
-                  {submitSuccess && (
-                    <span className="form-submit-success">
-                      Mesajınız başarıyla gönderildi!
-                    </span>
-                  )}
-                </div>
-              </form>
-            </motion.div>
+        <h2 className="contact-title">UniqDent İletişim</h2>
+        
+        <div className="contact-cards">
+          <div className="contact-card">
+            <h3 className="contact-card-title">Telefon</h3>
+            <a href="tel:+902122240000" className="contact-card-value">+90 212 224 0000</a>
           </div>
           
-          <div className="contact-info-container">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="contact-info-card"
-            >
-              <h3 className="contact-info-title">İletişim Bilgileri</h3>
-              
-              <div className="contact-info-list">
-                <div className="contact-info-item">
-                  <div className="contact-info-icon-container">
-                    <Phone size={20} className="contact-info-icon" />
-                  </div>
-                  <div className="contact-info-content">
-                    <h4 className="contact-info-label">Telefon</h4>
-                    <p className="contact-info-text">+90 (212) 123 45 67</p>
-                  </div>
-                </div>
-                
-                <div className="contact-info-item">
-                  <div className="contact-info-icon-container">
-                    <Mail size={20} className="contact-info-icon" />
-                  </div>
-                  <div className="contact-info-content">
-                    <h4 className="contact-info-label">E-posta</h4>
-                    <p className="contact-info-text">info@uniqdent.com</p>
-                  </div>
-                </div>
-                
-                <div className="contact-info-item">
-                  <div className="contact-info-icon-container">
-                    <MapPin size={20} className="contact-info-icon" />
-                  </div>
-                  <div className="contact-info-content">
-                    <h4 className="contact-info-label">Adres</h4>
-                    <p className="contact-info-text">
-                      Bağdat Caddesi No:123<br />
-                      Kadıköy, İstanbul
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="working-hours">
-                <h4 className="working-hours-title">Çalışma Saatleri</h4>
-                <div className="working-hours-list">
-                  <p className="working-hours-item">Pazartesi - Cuma: 09:00 - 19:00</p>
-                  <p className="working-hours-item">Cumartesi: 10:00 - 16:00</p>
-                  <p className="working-hours-item">Pazar: Kapalı</p>
-                </div>
-              </div>
-            </motion.div>
+          <div className="contact-card">
+            <h3 className="contact-card-title">E-posta</h3>
+            <a href="mailto:info@uniqdent.com" className="contact-card-value">info@uniqdent.com</a>
           </div>
+          
+          <div className="contact-card">
+            <h3 className="contact-card-title">Adres</h3>
+            <p className="contact-card-value">
+              Harbiye, Abdi İpekçi Cd.<br />
+              no:58/8, 34367 Şişli/İstanbul
+            </p>
+          </div>
+        </div>
+        
+        <div className="contact-whatsapp">
+          <h3 className="contact-card-title">WhatsApp</h3>
+          <a href="https://wa.me/905368994030" className="contact-card-value">+90 536 899 4030</a>
+        </div>
+        
+        <div className="contact-map-button">
+          <button className="konuma-git-btn">
+            <MapPin size={16} />
+            Konuma Git!
+          </button>
+        </div>
+        
+        <div className="contact-map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.8953810225766!2d28.98719731541928!3d41.04676497929723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab71e41efe0b7%3A0x5f10f6315ce9e6dc!2sAbdi%20%C4%B0pek%C3%A7i%20Cd.%2C%20%C5%9Ei%C5%9Fli%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1625124512345!5m2!1str!2str" 
+            width="100%" 
+            height="450" 
+            style={{ border: 0 }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </section>

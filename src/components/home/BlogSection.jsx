@@ -6,25 +6,49 @@ import './BlogSection.css';
 const BlogSection = () => {
   const blogPosts = [
     {
-      title: "Diş Beyazlatma Hakkında Bilmeniz Gerekenler",
-      excerpt: "Diş beyazlatma işlemi, dişlerin doğal rengini açarak daha beyaz ve parlak bir görünüm elde etmek için uygulanan bir estetik diş hekimliği prosedürüdür. Bu yazıda, diş beyazlatma işlemi öncesinde bilmeniz gereken önemli bilgileri derledik.",
-      image: "https://picsum.photos/id/96/600/400",
-      date: "15 Haziran 2025",
-      category: "Estetik"
+      title: "Kanal Tedavisi Nedir? Nasıl Yapılır? Nelere Dikkat Etmek Gerekir?",
+      image: "/images/blog/root-canal-treatment.jpg",
+      category: "GENEL"
     },
     {
-      title: "Çocuklarda Diş Sağlığı: Ebeveynler İçin Rehber",
-      excerpt: "Çocuklarda diş sağlığının korunması, sağlıklı bir gülüşün ömür boyu sürmesi için atılan ilk adımdır. Bu yazıda, çocuğunuzun diş sağlığını korumak için uygulamanız gereken temel bakım adımlarını ve dikkat edilmesi gereken noktaları ele alıyoruz.",
-      image: "https://picsum.photos/id/177/600/400",
-      date: "8 Haziran 2025",
-      category: "Çocuk"
+      title: "Hızlı İmplant Tedavisi İle 1 Günde İmplant",
+      image: "/images/blog/dental-implant.jpg",
+      category: "IMPLANT TEDAVISI"
     },
     {
-      title: "İmplant Tedavisi: Süreci ve Avantajları",
-      excerpt: "Diş implantları, eksik dişlerin yerine konulan, doğal dişlerin kök kısmını taklit eden titanyum vidalardan oluşan modern diş hekimliği çözümleridir. Bu yazıda implant tedavi sürecini ve sağladığı avantajları detaylı olarak inceliyoruz.",
-      image: "https://picsum.photos/id/180/600/400",
-      date: "1 Haziran 2025",
-      category: "Cerrahi"
+      title: "Gülüş Tasarımında Tedavi Konusu Olan Bölümler Nelerdir?",
+      image: "/images/blog/smile-design.jpg",
+      category: "BLOG - GÜNCEL DIŞSEL FIKIRLER"
+    },
+    {
+      title: "Diş Beyazlatma Sonrası",
+      image: "/images/blog/teeth-whitening.jpg",
+      category: "DIŞ ESTETIĞI"
+    },
+    {
+      title: "Protetik Diş Tedavisi",
+      image: "/images/blog/prosthetic-treatment.jpg",
+      category: "DIŞ ESTETIĞI"
+    },
+    {
+      title: "Yeni Nesil Hibrit Protez",
+      image: "/images/blog/hybrid-prosthetics.jpg",
+      category: "DIŞ ESTETIĞI"
+    },
+    {
+      title: "Başarısız İmplant Belirtileri",
+      image: "/images/blog/implant-failure.jpg",
+      category: "IMPLANT TEDAVISI"
+    },
+    {
+      title: "Diş Eti Çekilmesi",
+      image: "/images/blog/gum-recession.jpg",
+      category: "BLOG - GÜNCEL DIŞSEL FIKIRLER"
+    },
+    {
+      title: "Sabit Protez Diş, Protez Türleri ve Yeni Nesil Diş Protezi",
+      image: "/images/blog/dental-prosthetics.jpg",
+      category: "BLOG - GÜNCEL DIŞSEL FIKIRLER"
     }
   ];
 
@@ -39,12 +63,8 @@ const BlogSection = () => {
           className="blog-header"
         >
           <h2 className="blog-title">
-            Blog & Haberler
+            Blog – Güncel Dişsel Fikirler
           </h2>
-          <div className="blog-divider"></div>
-          <p className="blog-description">
-            Diş sağlığı hakkında bilmeniz gereken her şey ve kliniğimizden en son haberler.
-          </p>
         </motion.div>
 
         <div className="blog-grid">
@@ -52,18 +72,20 @@ const BlogSection = () => {
             <BlogCard
               key={index}
               title={post.title}
-              excerpt={post.excerpt}
               image={post.image}
-              date={post.date}
               category={post.category}
             />
           ))}
         </div>
 
-        <div className="blog-button-container">
-          <Button variant="outline" size="lg" className="blog-view-all-button">
-            Tüm Yazıları Gör
-          </Button>
+        <div className="blog-pagination">
+          <span className="page-number active">1</span>
+          <a href="#" className="page-number">2</a>
+          <a href="#" className="page-number">3</a>
+          <span className="page-separator">...</span>
+          <a href="#" className="page-number">8</a>
+          <a href="#" className="page-number">12</a>
+          <a href="#" className="page-number next">→</a>
         </div>
       </div>
     </section>
