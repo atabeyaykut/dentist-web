@@ -8,7 +8,7 @@ const BeforeAfterSection = () => {
     {
       id: 1,
       title: 'Diş Beyazlatma',
-      description: 'Günlük hayatımızda dişlerimizde birçok lekelenme faktörü ile karşılaşır ve zamanla renkler solarak bir görünüm oluşur.',
+      description: 'hayatımızda dişlerimizde birçok lekelenme faktörü ile karşılaşır ve zamanla renkler solarak bir görünüm oluşur.',
       beforeImage: 'https://picsum.photos/id/366/800/600',
       afterImage: 'https://picsum.photos/id/250/800/600',
       category: 'KOZMETIÇ DIŞ HEKIMLIĞI',

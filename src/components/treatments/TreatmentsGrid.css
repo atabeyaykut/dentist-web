@@ -1,0 +1,112 @@
+.treatments-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 0 0 0;
+}
+.treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.treatment-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+}
+.treatment-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.treatment-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 16px 0 8px 0;
+  text-align: center;
+}
+.treatment-card-btn {
+  background: #fff;
+  color: #222;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.treatment-card-btn:hover {
+  background: #222;
+  color: #fff;
+}
+.treatments-bottom-row {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+  align-items: center;
+}
+.treatments-bottom-info {
+  flex: 1;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.treatments-bottom-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.treatments-bottom-desc {
+  font-size: 1rem;
+  color: #444;
+}
+.treatments-bottom-btn {
+  margin-top: 16px;
+  background: #222;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.treatments-bottom-btn:hover {
+  background: #14b8a6;
+}
+.treatments-bottom-image img {
+  border-radius: 10px;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .treatments-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .treatments-bottom-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .treatments-bottom-image img {
+    width: 100%;
+    height: 220px;
+  }
+}
+@media (max-width: 600px) {
+  .treatments-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .treatments-bottom-info {
+    padding: 16px;
+  }
+}

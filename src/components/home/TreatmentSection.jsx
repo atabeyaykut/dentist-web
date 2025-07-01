@@ -38,19 +38,6 @@ const TreatmentSection = () => {
   return (
     <section id="tedaviler" className="treatment-section">
       <div className="treatment-container">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.7 }}
-          className="treatment-header"
-        >
-          <h2 className="treatment-title">
-            Uzman Kadromuz
-          </h2>
-          <div className="treatment-divider"></div>
-        </motion.div>
-        
         <div className="treatment-cards">
           {treatments.map((treatment, index) => (
             <TreatmentComparisonCard

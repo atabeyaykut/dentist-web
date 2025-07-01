@@ -10,7 +10,6 @@ import BeforeAfterSection from './BeforeAfterSection';
 import Testimonials from './Testimonials';
 import BlogSection from './BlogSection';
 import ContactForm from './ContactForm';
-import Footer from '../layout/Footer';
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -34,7 +33,6 @@ const LandingPage = () => {
         <BlogSection />
         <ContactForm />
       </main>
-      <Footer />
     </div>
   );
 };

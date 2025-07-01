@@ -11,7 +11,6 @@ function HomePage() {
     <div className="home-page">
       <HeroSection />
       <Services />
-      <TreatmentResults />
       <Doctors />
       <Testimonials />
       <ContactSection />

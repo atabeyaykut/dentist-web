@@ -1,6 +1,6 @@
 
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const navLinks = [
@@ -15,8 +15,14 @@ const navLinks = [
 const languages = ['ENG', 'DEU', 'FRA'];
 
 export default function Navbar() {
+  const location = useLocation();
   const [activeLanguage, setActiveLanguage] = useState('ENG');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activePath, setActivePath] = useState('/');
+
+  useEffect(() => {
+    setActivePath(location.pathname);
+  }, [location]);
 
   const handleLanguageChange = (lang) => {
     setActiveLanguage(lang);
@@ -103,7 +109,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`navbar-link ${link.name === 'Anasayfa' ? 'navbar-link-active' : ''}`}
+                className={`navbar-link ${activePath === link.path ? 'navbar-link-active' : ''}`}
               >
                 {link.name}
               </Link>
@@ -147,7 +153,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`navbar-mobile-link ${link.name === 'Anasayfa' ? 'navbar-mobile-link-active' : ''}`}
+                  className={`navbar-mobile-link ${activePath === link.path ? 'navbar-mobile-link-active' : ''}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}

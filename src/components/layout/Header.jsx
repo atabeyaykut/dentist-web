@@ -5,7 +5,15 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import './Header.css';
 
-const Header = ({ menuItems = ['Ana Sayfa', 'Hakkımızda', 'Hizmetler', 'Doktorlar', 'Blog', 'İletişim'] }) => {
+const Header = ({ 
+  menuItems = [
+    'Sağlık Turizmi', 
+    'Tedavilerimiz', 
+    'Doktorlarımız', 
+    'Blog', 
+    'İletişim'
+  ] 
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
