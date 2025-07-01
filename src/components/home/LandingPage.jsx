@@ -28,7 +28,6 @@ const LandingPage = () => {
         <Services />
         <Doctors />
         <TreatmentSection />
-        <BeforeAfterSection />
         <Testimonials />
         <BlogSection />
         <ContactForm />

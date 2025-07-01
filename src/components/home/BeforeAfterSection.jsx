@@ -62,33 +62,7 @@ const BeforeAfterSection = () => {
 
         {treatmentExamples.map((treatment, index) => (
           <div key={treatment.id} className={`treatment-row ${index % 2 === 1 ? 'reverse' : ''}`}>
-            <motion.div 
-              className="treatment-content"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="treatment-category">{treatment.category}</span>
-              <h2 className="treatment-title">{treatment.title}</h2>
-              <p className="treatment-description">{treatment.description}</p>
-              <button className="treatment-button">{treatment.buttonText}</button>
-            </motion.div>
-            
-            <motion.div 
-              className="treatment-slider"
-              initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <BeforeAfterSlider
-                beforeImage={treatment.beforeImage}
-                afterImage={treatment.afterImage}
-                beforeAlt={`${treatment.title} öncesi`}
-                afterAlt={`${treatment.title} sonrası`}
-              />
-            </motion.div>
+           
           </div>
         ))}
       </div>
