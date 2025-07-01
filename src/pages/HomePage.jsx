@@ -5,6 +5,7 @@ import Doctors from '../components/home/Doctors';
 import Testimonials from '../components/home/Testimonials';
 import TreatmentResults from '../components/home/TreatmentResults';
 import ContactSection from '../components/home/ContactSection';
+import BlogSection from '../components/home/BlogSection';
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
       <Services />
       <Doctors />
       <Testimonials />
+      <BlogSection />
       <ContactSection />
     </div>
   );
