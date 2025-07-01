@@ -7,47 +7,47 @@ const BlogSection = () => {
   const blogPosts = [
     {
       title: "Kanal Tedavisi Nedir? Nasıl Yapılır? Nelere Dikkat Etmek Gerekir?",
-      image: "/images/blog/root-canal-treatment.jpg",
+      image: "https://picsum.photos/id/237/600/400",
       category: "GENEL"
     },
     {
       title: "Hızlı İmplant Tedavisi İle 1 Günde İmplant",
-      image: "/images/blog/dental-implant.jpg",
+      image: "https://picsum.photos/id/238/600/400",
       category: "IMPLANT TEDAVISI"
     },
     {
       title: "Gülüş Tasarımında Tedavi Konusu Olan Bölümler Nelerdir?",
-      image: "/images/blog/smile-design.jpg",
+      image: "https://picsum.photos/id/239/600/400",
       category: "BLOG - GÜNCEL DIŞSEL FIKIRLER"
     },
     {
       title: "Diş Beyazlatma Sonrası",
-      image: "/images/blog/teeth-whitening.jpg",
+      image: "https://picsum.photos/id/240/600/400",
       category: "DIŞ ESTETIĞI"
     },
     {
       title: "Protetik Diş Tedavisi",
-      image: "/images/blog/prosthetic-treatment.jpg",
+      image: "https://picsum.photos/id/241/600/400",
       category: "DIŞ ESTETIĞI"
     },
     {
       title: "Yeni Nesil Hibrit Protez",
-      image: "/images/blog/hybrid-prosthetics.jpg",
+      image: "https://picsum.photos/id/242/600/400",
       category: "DIŞ ESTETIĞI"
     },
     {
       title: "Başarısız İmplant Belirtileri",
-      image: "/images/blog/implant-failure.jpg",
+      image: "https://picsum.photos/id/243/600/400",
       category: "IMPLANT TEDAVISI"
     },
     {
       title: "Diş Eti Çekilmesi",
-      image: "/images/blog/gum-recession.jpg",
+      image: "https://picsum.photos/id/244/600/400",
       category: "BLOG - GÜNCEL DIŞSEL FIKIRLER"
     },
     {
       title: "Sabit Protez Diş, Protez Türleri ve Yeni Nesil Diş Protezi",
-      image: "/images/blog/dental-prosthetics.jpg",
+      image: "https://picsum.photos/id/245/600/400",
       category: "BLOG - GÜNCEL DIŞSEL FIKIRLER"
     }
   ];
