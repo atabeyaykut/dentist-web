@@ -1,9 +1,11 @@
 import React from 'react'
 import HeroSection from './components/HeroSection'
+import Header from './components/Header'
+import ClinicalExcellence from './components/ClinicalExcellence'
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col items-center justify-centerß">
       <style>
         {`
           .slide-up-animate {
@@ -19,8 +21,10 @@ function App() {
           }
         `}
       </style>
+      <Header />
       <HeroSection />
-    </>
+      <ClinicalExcellence />
+    </div>
   )
 }
 
