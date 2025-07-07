@@ -1,0 +1,66 @@
+:root {
+  --cmsmasters-colors-primary: var(--e-global-color-primary, #00b2ff);
+  --cmsmasters-colors-secondary: var(--e-global-color-secondary, #0a2232);
+  --cmsmasters-colors-accent: var(--e-global-color-accent, #00efd1);
+  --cmsmasters-colors-tertiary: var(--e-global-color-tertiary, #a5aea8);
+  --cmsmasters-link-colors-normal: var(--cmsmasters-colors-primary);
+  --cmsmasters-link-colors-hover: var(--cmsmasters-colors-tertiary);
+  --cmsmasters-colors-text: var(--e-global-color-text, #666b68);
+  --cmsmasters-colors-link: var(--cmsmasters-link-colors-normal);
+  --cmsmasters-colors-hover: var(--cmsmasters-link-colors-hover);
+  --cmsmasters-colors-heading: var(--cmsmasters-colors-secondary);
+  --cmsmasters-colors-bg: var(--e-global-color-background, #fff);
+  --cmsmasters-colors-alternate: var(--e-global-color-alternate, #f7f7f7);
+  --cmsmasters-colors-bd: var(--e-global-color-border, #dfe4e1);
+  
+  /* Font families */
+  --cmsmasters-default-font: sans-serif;
+  --cmsmasters-primary-font-family: var(--e-global-typography-primary-font-family, "Plus Jakarta Sans"), var(--cmsmasters-default-font);
+  --cmsmasters-text-font-family: var(--e-global-typography-text-font-family, "Plus Jakarta Sans"), var(--cmsmasters-default-font);
+  --cmsmasters-accent-font-family: var(--e-global-typography-accent-font-family, "Plus Jakarta Sans"), var(--cmsmasters-default-font);
+  --cmsmasters-button-font-family: var(--e-global-typography-button-font-family, var(--cmsmasters-accent-font-family)), var(--cmsmasters-default-font);
+  
+  /* Input styles */
+  --cmsmasters-input-font-family: var(--cmsmasters-small-font-family, var(--cmsmasters-text-font-family));
+  --cmsmasters-input-font-size: var(--cmsmasters-small-font-size, 15px);
+  --cmsmasters-input-line-height: var(--cmsmasters-small-line-height, 1.75em);
+  --cmsmasters-input-font-weight: var(--cmsmasters-small-font-weight, 300);
+  --cmsmasters-input-text-transform: var(--cmsmasters-small-text-transform, none);
+  --cmsmasters-input-font-style: var(--cmsmasters-small-font-style, normal);
+  --cmsmasters-input-letter-spacing: var(--cmsmasters-small-letter-spacing, 0);
+  
+  --cmsmasters-input-normal-colors-bg: var(--cmsmasters-colors-bg);
+  --cmsmasters-input-normal-colors-color: var(--cmsmasters-colors-text);
+  --cmsmasters-input-normal-colors-bd: var(--cmsmasters-colors-bd);
+  --cmsmasters-input-normal-bd-radius: 0;
+  --cmsmasters-input-normal-bd-style: solid;
+  --cmsmasters-input-normal-bd-width-top: 1px;
+  --cmsmasters-input-normal-bd-width-right: 1px;
+  --cmsmasters-input-normal-bd-width-bottom: 1px;
+  --cmsmasters-input-normal-bd-width-left: 1px;
+  
+  --cmsmasters-input-focus-colors-bg: var(--cmsmasters-input-normal-colors-bg);
+  --cmsmasters-input-focus-colors-color: var(--cmsmasters-input-normal-colors-color);
+  --cmsmasters-input-focus-colors-bd: var(--cmsmasters-colors-accent);
+  
+  --cmsmasters-input-padding-top: 15px;
+  --cmsmasters-input-padding-right: 25px;
+  --cmsmasters-input-padding-bottom: 15px;
+  --cmsmasters-input-padding-left: 25px;
+  
+  /* Label styles */
+  --cmsmasters-input-label-color: var(--cmsmasters-colors-heading);
+  --cmsmasters-input-label-font-family: var(--cmsmasters-h6-font-family, var(--cmsmasters-primary-font-family));
+  --cmsmasters-input-label-font-size: var(--cmsmasters-h6-font-size, 14px);
+  --cmsmasters-input-label-line-height: var(--cmsmasters-h6-line-height, 1.55em);
+  --cmsmasters-input-label-font-weight: var(--cmsmasters-h6-font-weight, 400);
+  --cmsmasters-input-label-text-transform: var(--cmsmasters-h6-text-transform, uppercase);
+  --cmsmasters-input-label-letter-spacing: var(--cmsmasters-h6-letter-spacing, 2px);
+  
+  /* Button styles */
+  --cmsmasters-button-font-size: var(--e-global-typography-button-font-size, 14px);
+  --cmsmasters-button-line-height: var(--e-global-typography-button-line-height, 1.6em);
+  --cmsmasters-button-font-weight: var(--e-global-typography-button-font-weight, 700);
+  --cmsmasters-button-text-transform: var(--e-global-typography-button-text-transform, uppercase);
+  --cmsmasters-button-letter-spacing: var(--e-global-typography-button-letter-spacing, 0);
+}

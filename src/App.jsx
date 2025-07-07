@@ -9,6 +9,7 @@ import TeamSection from './components/TeamSection'
 import BeforeAfterSection from './components/BeforeAfterSection'
 import StatsSection from './components/StatsSection'
 import PatientTestimonials from './components/PatientTestimonials'
+import ContactUs from './components/ContactUs'
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
       <BeforeAfterSection />
       <StatsSection />
       <PatientTestimonials />
+      <ContactUs />
     </div>
   )
 }

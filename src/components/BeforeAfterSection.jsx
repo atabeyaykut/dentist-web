@@ -9,7 +9,7 @@ function BeforeAfterSection() {
   };
 
   return (
-    <section className="w-full py-24 bg-gray-50">
+    <section className="w-full py-24 bg-white">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
         {/* Left Content */}
         <div className="w-full md:w-1/2 pr-0 md:pr-12 mb-10 md:mb-0">

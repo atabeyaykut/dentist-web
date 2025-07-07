@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
 import './index.css'
+import './styles/variables.css'
 
 // Import fonts for our dental website
 import '@fontsource/inter/400.css'

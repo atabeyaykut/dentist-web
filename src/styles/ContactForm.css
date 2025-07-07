@@ -1,0 +1,178 @@
+.contact-form-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.contact-form-title {
+  font-family: var(--cmsmasters-primary-font-family);
+  color: var(--cmsmasters-colors-heading);
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.contact-form label {
+  font-family: var(--cmsmasters-input-label-font-family);
+  font-size: var(--cmsmasters-input-label-font-size);
+  font-weight: var(--cmsmasters-input-label-font-weight);
+  line-height: var(--cmsmasters-input-label-line-height);
+  text-transform: var(--cmsmasters-input-label-text-transform);
+  letter-spacing: var(--cmsmasters-input-label-letter-spacing);
+  color: var(--cmsmasters-input-label-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form select {
+  font-family: var(--cmsmasters-input-font-family);
+  font-size: var(--cmsmasters-input-font-size);
+  font-weight: var(--cmsmasters-input-font-weight);
+  line-height: var(--cmsmasters-input-line-height);
+  color: var(--cmsmasters-input-normal-colors-color);
+  background-color: var(--cmsmasters-input-normal-colors-bg);
+  border: var(--cmsmasters-input-normal-bd-width-top) var(--cmsmasters-input-normal-bd-style) var(--cmsmasters-input-normal-colors-bd);
+  border-radius: var(--cmsmasters-input-normal-bd-radius);
+  padding-top: var(--cmsmasters-input-padding-top);
+  padding-right: var(--cmsmasters-input-padding-right);
+  padding-bottom: var(--cmsmasters-input-padding-bottom);
+  padding-left: var(--cmsmasters-input-padding-left);
+  width: 100%;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.contact-form .select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--cmsmasters-colors-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form input:focus,
+.contact-form select:focus {
+  border-color: var(--cmsmasters-input-focus-colors-bd);
+  box-shadow: 0 0 0 1px var(--cmsmasters-input-focus-colors-bd);
+}
+
+.contact-form .date-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: var(--cmsmasters-input-normal-bd-width-top) var(--cmsmasters-input-normal-bd-style) var(--cmsmasters-input-normal-colors-bd);
+  border-radius: var(--cmsmasters-input-normal-bd-radius);
+  background-color: var(--cmsmasters-input-normal-colors-bg);
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .date-input-container:focus-within {
+  border-color: var(--cmsmasters-input-focus-colors-bd);
+  box-shadow: 0 0 0 1px var(--cmsmasters-input-focus-colors-bd);
+}
+
+.contact-form .date-input-container input {
+  border: none;
+  padding-left: 10px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.contact-form .date-input-container input:focus {
+  box-shadow: none;
+}
+
+.contact-form .date-input-container .calendar-icon {
+  padding-left: 15px;
+  color: var(--cmsmasters-colors-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form button,
+.contact-form-button {
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+  font-family: var(--cmsmasters-button-font-family);
+  font-size: var(--cmsmasters-button-font-size);
+  font-weight: var(--cmsmasters-button-font-weight);
+  line-height: var(--cmsmasters-button-line-height);
+  text-transform: var(--cmsmasters-button-text-transform);
+  letter-spacing: var(--cmsmasters-button-letter-spacing);
+  word-spacing: var(--cmsmasters-button-word-spacing);
+  text-decoration: var(--cmsmasters-button-text-decoration);
+  padding: var(--cmsmasters-input-padding-top) var(--cmsmasters-input-padding-right);
+  background-color: var(--cmsmasters-colors-bg);
+  color: var(--cmsmasters-colors-heading);
+  border: var(--cmsmasters-input-normal-bd-width-top) var(--cmsmasters-input-normal-bd-style) var(--cmsmasters-input-normal-colors-bd);
+  border-radius: var(--cmsmasters-input-normal-bd-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--cmsmasters-button-normal-box-shadow);
+  text-shadow: var(--cmsmasters-button-text-shadow);
+  width: auto;
+  display: inline-block;
+}
+
+.contact-form button:hover,
+.contact-form-button:hover {
+  background-color: var(--cmsmasters-colors-alternate);
+  color: var(--cmsmasters-colors-primary);
+  text-decoration: var(--cmsmasters-button-hover-text-decoration);
+  text-shadow: var(--cmsmasters-button-hover-text-shadow);
+  box-shadow: var(--cmsmasters-button-hover-box-shadow);
+  border-color: var(--cmsmasters-colors-primary);
+}
+
+.contact-form .required {
+  color: #e74c3c;
+}
+
+.contact-form .time-select-label {
+  font-size: 12px;
+  color: var(--cmsmasters-colors-text);
+}
+
+/* Time selection help text */
+.contact-form .text-xs {
+  font-family: var(--cmsmasters-input-font-family);
+  font-size: 0.75rem;
+  color: var(--cmsmasters-colors-text);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cmsmasters-input-label-color);
+    font-family: var(--cmsmasters-input-label-font-family);
+    font-size: var(--cmsmasters-input-label-font-size);
+    font-weight: var(--cmsmasters-input-label-font-weight);
+    line-height: var(--cmsmasters-input-label-line-height);
+    letter-spacing: var(--cmsmasters-input-label-letter-spacing);
+    text-transform: var(--cmsmasters-input-label-text-transform);
+  }
+  
+  .contact-form button {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .contact-form .time-select-label {
+    margin-top: 4px;
+  }
+}
