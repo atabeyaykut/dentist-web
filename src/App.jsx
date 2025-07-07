@@ -3,6 +3,7 @@ import HeroSection from './components/HeroSection'
 import Header from './components/Header'
 import ClinicalExcellence from './components/ClinicalExcellence'
 import WhyChooseUs from './components/WhyChooseUs'
+import ConfidenceSection from './components/ConfidenceSection'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <HeroSection />
       <ClinicalExcellence />
       <WhyChooseUs />
+      <ConfidenceSection />
     </div>
   )
 }
