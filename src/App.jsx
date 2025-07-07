@@ -4,6 +4,7 @@ import Header from './components/Header'
 import ClinicalExcellence from './components/ClinicalExcellence'
 import WhyChooseUs from './components/WhyChooseUs'
 import ConfidenceSection from './components/ConfidenceSection'
+import InfiniteSlider from './components/InfiniteSlider'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <ClinicalExcellence />
       <WhyChooseUs />
       <ConfidenceSection />
+      <InfiniteSlider />
     </div>
   )
 }
