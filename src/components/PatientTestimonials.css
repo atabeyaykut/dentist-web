@@ -1,0 +1,30 @@
+.testimonials-slider {
+  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonials-slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.testimonial-card {
+  scroll-snap-align: center;
+  min-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .testimonial-card {
+    min-width: 33.333%;
+  }
+}
+
+.star-rating {
+  color: #FFD700;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}

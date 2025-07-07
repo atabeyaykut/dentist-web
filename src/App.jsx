@@ -5,6 +5,10 @@ import ClinicalExcellence from './components/ClinicalExcellence'
 import WhyChooseUs from './components/WhyChooseUs'
 import ConfidenceSection from './components/ConfidenceSection'
 import InfiniteSlider from './components/InfiniteSlider'
+import TeamSection from './components/TeamSection'
+import BeforeAfterSection from './components/BeforeAfterSection'
+import StatsSection from './components/StatsSection'
+import PatientTestimonials from './components/PatientTestimonials'
 
 function App() {
   return (
@@ -30,6 +34,10 @@ function App() {
       <WhyChooseUs />
       <ConfidenceSection />
       <InfiniteSlider />
+      <TeamSection />
+      <BeforeAfterSection />
+      <StatsSection />
+      <PatientTestimonials />
     </div>
   )
 }
