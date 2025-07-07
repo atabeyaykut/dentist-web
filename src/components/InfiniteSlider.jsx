@@ -125,7 +125,7 @@ function InfiniteSlider({
 
         {/* Navigation buttons */}
         <button
-          className="slider-nav-button prev absolute top-[14vh] right-[16vw] -translate-y-1/2 bg-transparent hover:bg-white border border-gray-700/50 rounded-full p-3 shadow-lg z-30 transition-all"
+          className="slider-nav-button prev absolute top-[14vh] right-[16vw] -translate-y-1/2 bg-transparent hover:bg-white/80 border border-gray-700/50 rounded-full p-3 shadow-lg z-30 transition-all"
           onClick={handlePrev}
           aria-label="Previous slide"
         >
@@ -135,7 +135,7 @@ function InfiniteSlider({
         </button>
 
         <button
-          className="slider-nav-button next absolute top-[14vh] right-[6vw] -translate-y-1/2 bg-transparent hover:bg-white border border-gray-700/50 rounded-full p-3 shadow-lg z-30 transition-all"
+          className="slider-nav-button next absolute top-[14vh] right-[6vw] -translate-y-1/2 bg-transparent hover:bg-white/80 border border-gray-700/50 rounded-full p-3 shadow-lg z-30 transition-all"
           onClick={handleNext}
           aria-label="Next slide"
         >
