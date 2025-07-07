@@ -121,7 +121,29 @@ function InfiniteSlider({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="w-full">
-        <h2 className="text-5xl text-center w-full font-light py-20 bg-gradient-to-r from-[#00EFD1] to-[#00B2FF] mb-0">POPÜLER HİZMETLERİMİZ</h2>
+        <h2 className="text-5xl text-left w-full pl-[12vw] font-light py-20 bg-gradient-to-r from-[#00EFD1] to-[#00B2FF] mb-0">POPÜLER HİZMETLERİMİZ</h2>
+
+        {/* Navigation buttons */}
+        <button
+          className="slider-nav-button prev absolute top-[14vh] right-[16vw] -translate-y-1/2 bg-transparent hover:bg-white border border-gray-700/50 rounded-full p-3 shadow-lg z-30 transition-all"
+          onClick={handlePrev}
+          aria-label="Previous slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <button
+          className="slider-nav-button next absolute top-[14vh] right-[6vw] -translate-y-1/2 bg-transparent hover:bg-white border border-gray-700/50 rounded-full p-3 shadow-lg z-30 transition-all"
+          onClick={handleNext}
+          aria-label="Next slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
       </div>
       <div className="w-full">
         <div
@@ -183,26 +205,6 @@ function InfiniteSlider({
         </div>
       </div>
 
-      {/* Navigation buttons */}
-      <button
-        className="slider-nav-button prev absolute top-1/2 left-6 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg z-30 transition-all"
-        onClick={handlePrev}
-        aria-label="Previous slide"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-
-      <button
-        className="slider-nav-button next absolute top-1/2 right-6 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg z-30 transition-all"
-        onClick={handleNext}
-        aria-label="Next slide"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
     </div>
   );
 }
