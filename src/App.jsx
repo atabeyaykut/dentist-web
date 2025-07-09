@@ -1,22 +1,17 @@
 import React from 'react'
-import HeroSection from './components/HeroSection'
+import { Routes, Route } from 'react-router-dom'
+
+// Components
 import Header from './components/Header'
-import ClinicalExcellence from './components/ClinicalExcellence'
-import WhyChooseUs from './components/WhyChooseUs'
-import ConfidenceSection from './components/ConfidenceSection'
-import InfiniteSlider from './components/InfiniteSlider'
-import TeamSection from './components/TeamSection'
-import BeforeAfterSection from './components/BeforeAfterSection'
-import StatsSection from './components/StatsSection'
-import PatientTestimonials from './components/PatientTestimonials'
-import ContactUs from './components/ContactUs'
-import LatestNews from './components/LatestNews'
-import LocationMap from './components/LocationMap'
 import Footer from './components/Footer'
+
+// Pages
+import HomePage from './pages/HomePage'
+import PediatricDentistry from './pages/PediatricDentistry'
 
 function App() {
   return (
-    <div className="flex flex-col items-center justify-centerß">
+    <div className="flex flex-col items-center justify-center">
       <style>
         {`
           .slide-up-animate {
@@ -33,18 +28,10 @@ function App() {
         `}
       </style>
       <Header />
-      <HeroSection />
-      <ClinicalExcellence />
-      <WhyChooseUs />
-      <ConfidenceSection />
-      <InfiniteSlider />
-      <TeamSection />
-      <BeforeAfterSection />
-      <StatsSection />
-      <PatientTestimonials />
-      <ContactUs />
-      <LatestNews />
-      <LocationMap />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services/pediatric-dentistry" element={<PediatricDentistry />} />
+      </Routes>
       <Footer />
     </div>
   )
