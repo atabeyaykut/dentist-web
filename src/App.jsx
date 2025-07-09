@@ -10,6 +10,9 @@ import BeforeAfterSection from './components/BeforeAfterSection'
 import StatsSection from './components/StatsSection'
 import PatientTestimonials from './components/PatientTestimonials'
 import ContactUs from './components/ContactUs'
+import LatestNews from './components/LatestNews'
+import LocationMap from './components/LocationMap'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -40,6 +43,9 @@ function App() {
       <StatsSection />
       <PatientTestimonials />
       <ContactUs />
+      <LatestNews />
+      <LocationMap />
+      <Footer />
     </div>
   )
 }

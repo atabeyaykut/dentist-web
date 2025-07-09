@@ -46,7 +46,18 @@ function PatientTestimonials() {
   return (
     <section className="py-16 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-medium text-center mb-2">Patients love Dentalist Clinic</h2>
+        <h2 className="text-center mb-2" style={{
+          fontFamily: 'var(--cmsmasters-h2-font-family)',
+          fontSize: 'var(--cmsmasters-h2-font-size)',
+          lineHeight: 'var(--cmsmasters-h2-line-height)',
+          fontWeight: 'var(--cmsmasters-h2-font-weight)',
+          textTransform: 'var(--cmsmasters-h2-text-transform)',
+          fontStyle: 'var(--cmsmasters-h2-font-style)',
+          textDecoration: 'var(--cmsmasters-h2-text-decoration)',
+          letterSpacing: 'var(--cmsmasters-h2-letter-spacing)',
+          wordSpacing: 'var(--cmsmasters-h2-word-spacing)',
+          color: 'var(--cmsmasters-colors-heading)'
+        }}>Patients love Dentalist Clinic</h2>
         <p className="text-center text-gray-600 mb-10">More than 250 five-star reviews on Google</p>
         
         {/* Desktop view - all 5 testimonials side by side */}
